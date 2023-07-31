@@ -21,3 +21,6 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/richiehales/richie-reddit-app.git
 git push -u origin main
+
+## Last Push
+From home Monday 18:45
