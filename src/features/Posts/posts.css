@@ -1,0 +1,13 @@
+.postItems {
+    border: 1px solid red;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.posts {
+    border: 1px solid red;
+    display: flex;
+    text-align: center;
+
+}

@@ -1,0 +1,14 @@
+header {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
