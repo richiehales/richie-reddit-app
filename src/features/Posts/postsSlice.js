@@ -17,12 +17,9 @@ export const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-    toggleA: (state) => {
-      state.isToggled = !state.isToggled;
-    },
+
   }
 })
 
 export default postsSlice.reducer;
-export const { toggleA } = postsSlice.actions;
 export const selectPosts = (state) => state.posts;

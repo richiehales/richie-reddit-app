@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import selectionReducer from '../features/Posts/selectionSlice';
 import postsReducer from '../features/Posts/postsSlice';
-import subRedditReducer from '../features/Posts/subRedditSlice';
+import subRedditReducer from '../features/Subreddit/subRedditSlice';
 
 export const store = configureStore({
   reducer: {
