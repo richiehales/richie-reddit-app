@@ -2,7 +2,12 @@
 https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ## Current Step (todo)
-1. Create 2 hard coded slices and switch betweem them (display either in 1 div with toggle button)
+1. Fetch Sub Reddit categories
+2. Map Sub Reddit Categories to buttons
+3. Click  a Sub Reddit button
+4. Fetch chosen Sub Reddit posts
+5. Add to Sub Reddit store
+6. Map subreddit store to page
 
 ## Github
 ### Push - 
@@ -15,12 +20,15 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 
 ### Initial Git Pull/Add (Could clone)
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/richiehales/richie-reddit-app.git
-git push -u origin main
+1. git init
+2. git add .
+3. git commit -m "first commit"
+4. git branch -M main
+5. git remote add origin https://github.com/richiehales/richie-reddit-app.git
+6. git push -u origin main
+
+### Git Clone
+1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-From home Monday 18:45
+From office Tuesday 16:45

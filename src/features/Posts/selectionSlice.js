@@ -16,3 +16,4 @@ const selectionSlice = createSlice({
 
 export const { setSelectedSlice } = selectionSlice.actions;
 export default selectionSlice.reducer;
+export const selection = (state) => state.selection;

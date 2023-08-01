@@ -1,7 +1,7 @@
 import {  createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
-  {
+  { 
     id: 3,
     title: "Sub Reddit Page - POST 3",
     comment: "Sub Reddit Page - Comment 3"

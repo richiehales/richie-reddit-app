@@ -17,7 +17,7 @@ export function Posts() {
   const handleSelectSlice = (sliceName) => {
     dispatch(setSelectedSlice(sliceName));
   };    
-   
+  
   const postItems = posts.map((post) => {  
     if (selectedSlice === 'postsSlice') {   
     return (
@@ -30,7 +30,7 @@ export function Posts() {
   })
 
   const subRedditItems = subReddit.map((post) => {
-    if (selectedSlice === 'subRedditSlice') {     
+    if (selectedSlice === post.id) {     
     return (
      <div key={nanoid()} className="posts" >
        {post.title} <br />      
@@ -40,35 +40,53 @@ export function Posts() {
     return undefined
    })
 
+   const subRedditButtons = subReddit.map((button) => {
+    return(
+      <div key={nanoid()} className="posts" >
+        <button onClick={() => handleSelectSlice(button.id)}>
+          {button.title}
+        </button>
+      </div>
+
+    )
+   })
+
   return (
     <div className="postItems">
       <div>
         <div>
           {postItems}
           {subRedditItems}
+          
         </div>
       </div>
       <div>
         <button onClick={() => handleSelectSlice('postsSlice')}>Home Page</button> <br/>
-        <button onClick={() => handleSelectSlice('subRedditSlice')}>Sub Reddit Page</button>
+        {subRedditButtons}
       </div>
     </div>
 
   ) 
 }
 
+/*
 // Testing fetch subreddits - need to map these to buttons
 // This will return 25 subreddits
 fetch(`https://www.reddit.com/subreddits.json`)
-    .then(res => res.json())
-    .then(data => console.log(data))
+  .then(response => response.json())
+  .then(data => console.log(data))
+*/
+
+/*
+// Logs first subReddit ([0] - Home)
+fetch(`https://www.reddit.com/subreddits.json`)
+  .then(response => response.json())
+  .then(data => console.log(data.data.children[1]))
+*/
 
 
-
-
-
-
-
-
+fetch(`https://www.reddit.com/subreddits.json`)
+  .then(response => response.json())
+  .then(data => console.log((data.data.children).map((title) => title.data.display_name)))
 
 
