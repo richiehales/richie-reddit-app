@@ -2,12 +2,12 @@
 https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ## Current Step (todo)
-1. Fetch Sub Reddit categories
+1. Fetch Sub Reddit categories and store in subRedditSlice
 2. Map Sub Reddit Categories to buttons
-3. Click  a Sub Reddit button
-4. Fetch chosen Sub Reddit posts
-5. Add to Sub Reddit store
-6. Map subreddit store to page
+3. Click a subReddit button - move url (eg. '/r/Home') to selectedSubReddit in postsSlice 
+4. Fetch chosen Sub Reddit posts and store in postsSlice
+5. Map postsSlice (with selected subReddit now in postsSlice) to posts display area
+
 
 ## Github
 ### Push - 
@@ -31,4 +31,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-From home Tuesday 18:45
+From office Wednesday 16:45
+

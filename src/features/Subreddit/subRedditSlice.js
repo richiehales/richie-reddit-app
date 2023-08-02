@@ -1,25 +1,22 @@
-import {  createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = [
-  { 
-    id: 3,
-    title: "Sub Reddit Page - POST 3",
-    comment: "Sub Reddit Page - Comment 3"
-  },
-  {
-    id: 4,
-    title: "Sub Reddit Page - POST 4",
-    comment: "Sub Reddit Page - Comment 4"
-  }
-]
+const initialState = {  
+  id: 1,
+  posts: []
+}
 
-export const subRedditSlice = createSlice({
-  name: 'subReddit',
+const subRedditSlice = createSlice({
+  name: 'subreddits',
   initialState,
   reducers: {
+    setSubReddits: (state, action) => {
+      state.posts = action.payload; // Replace the state with the new data received from the API.
+    },
+  },
+});
 
-  }
-})
+export const { setSubReddits } = subRedditSlice.actions;
 
 export default subRedditSlice.reducer;
-export const subRedditPosts = (state) => state.subReddit;
+
+export const selectSubRedditSlice = (state) => state.subReddits;

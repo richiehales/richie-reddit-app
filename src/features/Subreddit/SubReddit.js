@@ -1,40 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchMyData } from '../../store/getSubReddit';
 import { nanoid } from '@reduxjs/toolkit'
-import { subRedditPosts } from "../Subreddit/subRedditSlice.js";
-import { setSelectedSlice } from '../Posts/selectionSlice';
+
+
 
 export function SubReddit() {
+  const dispatch = useDispatch();
+  const myData = useSelector((state) => state.subReddits.posts.data?.children); // data? - make sure fetched before trying to map
 
-    const subReddit = useSelector(subRedditPosts)
-  
-    const dispatch = useDispatch();    
-  
-    const handleSelectSlice = (buttonId) => {
-      dispatch(setSelectedSlice(buttonId));
-    }; 
-    
-    const subRedditButtons = subReddit.map((button) => {
-      return(
-        <div key={nanoid()} className="posts" >
-          <button onClick={() => handleSelectSlice(button.id)}>
-            {button.title}
-          </button>
-        </div>
-  
-      )
-     })
-  
-    return (
-      <div className="postItems">
-        <div>
+  useEffect(() => {
+    dispatch(fetchMyData());
+  }, [dispatch]);
 
-        </div>
-        <div>
-          <button onClick={() => handleSelectSlice('postsSlice')}>Home Page</button> <br/>
-          {subRedditButtons}
-        </div>
-      </div>
-  
-    ) 
-  }
+  // Render your component with the fetched data
+  // ...
+
+  const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map
+    <button key={nanoid()}>{item.data.display_name}</button>
+  ));
+
+  return (
+    <div>
+      {subRedditButtons}
+    </div>
+  );
+};
+
+

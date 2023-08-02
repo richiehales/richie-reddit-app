@@ -4,7 +4,8 @@ const initialState = [
   {
     id: 1,
     title: "Home Page - POST 1",
-    comment: "Home Page - Comment 1"
+    comment: "Home Page - Comment 1",
+    selectedSubreddit: '/r/Home'
   },
   {
     id: 2,
