@@ -1,9 +1,9 @@
 import { setSubReddits } from '../features/Subreddit/subRedditSlice';
-import { fetchDataFromAPI } from './api';
+import { fetchSubreddits } from './api';
 
 export const fetchMyData = () => async (dispatch) => {
   try {
-    const data = await fetchDataFromAPI();
+    const data = await fetchSubreddits();
     dispatch(setSubReddits(data));
   } catch (error) {
     // Handle errors, log, or dispatch an error action if needed

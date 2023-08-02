@@ -1,26 +1,25 @@
 import {  createSlice } from '@reduxjs/toolkit';
 
-const initialState = [
-  {
-    id: 1,
-    title: "Home Page - POST 1",
-    comment: "Home Page - Comment 1",
-    selectedSubreddit: '/r/Home'
-  },
-  {
-    id: 2,
-    title: "Home Page - POST 2",
-    comment: "Home Page - Comment 2"
-  }
-]
+
+const initialState = {
+  posts: [],
+  searchTerm: '',
+  selectedSubreddit: '/r/pics/',
+};
 
 export const postsSlice = createSlice({
   name: 'posts',
   initialState,
   reducers: {
-
+    setSelectedSubreddit: (state, action) => {
+      state.selectedSubreddit = action.payload;
+    },
+    setPosts: (state, action) => {
+      state.posts = action.payload; // Replace the state with the new posts data received from the API.
+    },
   }
 })
 
+export const { setSelectedSubreddit, setPosts } = postsSlice.actions;
 export default postsSlice.reducer;
-export const selectPosts = (state) => state.posts;
+export const selectPosts = (state) => state.posts.posts; //state.posts(initialState posts: []).posts(name: 'posts')
