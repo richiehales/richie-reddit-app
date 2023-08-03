@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyData } from '../../store/getSubReddit';
-import { nanoid } from '@reduxjs/toolkit'
 import { setSelectedSubreddit } from '../Posts/postsSlice';
+import './subReddit.css';
 
 
 
@@ -19,13 +19,15 @@ export function SubReddit() {
   }, [dispatch]);
 
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map
-    <button key={nanoid()} onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
-      {item.data.display_name}
-    </button>
+    <div key={item.data.display_name} className='buttons'>
+      <button onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
+        {item.data.display_name}
+      </button>
+    </div>
   ));
 
   return (
-    <div>
+    <div className='subReddits'>
       {subRedditButtons}
     </div>
   );

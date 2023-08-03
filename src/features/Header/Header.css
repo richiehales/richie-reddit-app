@@ -7,8 +7,17 @@ header {
 
 .logo {
     margin-left: 1rem;
+    color: red;
     display: flex;
     align-items: center;
     position: absolute;
     left: 0;
+}
+
+.logo span{
+    margin-left: 0.5rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    color:white;
+    background-color: red;;
 }

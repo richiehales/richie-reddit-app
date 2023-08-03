@@ -11,7 +11,7 @@ const Header = () => {
         <div className="logo">
           <FaReddit className="logo-icon" />
           <p>
-            Reddit<span>Minimal</span>
+            Reddit<span>Richie Edition</span>
           </p>
         </div>
         <form className="search">

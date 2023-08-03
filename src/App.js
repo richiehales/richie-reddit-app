@@ -11,7 +11,7 @@ function App() {
       <Header />
       <main className="App-content">
         <SubReddit />
-        <Posts />        
+        <Posts className='posts'/>        
       </main>
     </div>
   );

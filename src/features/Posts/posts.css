@@ -1,13 +1,21 @@
 .postItems {
-    border: 1px solid red;
-    width: 80%;
-    display: flex;
-    justify-content: center;
+  border: 1px solid red;
+  width: 100%;
+  justify-content: center;
+}
+
+.postItems img {
+  width: 70%
 }
 
 .posts {
-    border: 1px solid red;
-    display: flex;
-    text-align: center;
+  border: 1px solid red;
+  width: 50%;
 
+
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
 }

@@ -1,8 +1,9 @@
+const API_ROOT = 'https://www.reddit.com';
 
-
-export const fetchDataFromPostsAPI = async () => {
+export const fetchPosts = async (selectedSubreddit) => {
+  
     try {
-      const response = await fetch('https://www.reddit.com/r/Home.json');
+      const response = await fetch(`${API_ROOT}/${selectedSubreddit}.json`);
       if (!response.ok) {
         throw new Error('Network response was not ok.');
       }
@@ -30,7 +31,11 @@ export const fetchDataFromPostsAPI = async () => {
     }
   };
 
+
+
+/*
 console.log('From api.js')
 console.log(fetchDataFromPostsAPI())
 console.log(fetchSubreddits())
+*/
   

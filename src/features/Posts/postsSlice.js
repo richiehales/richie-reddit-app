@@ -4,7 +4,7 @@ import {  createSlice } from '@reduxjs/toolkit';
 const initialState = {
   posts: [],
   searchTerm: '',
-  selectedSubreddit: '/r/pics/',
+  selectedSubreddit: 'r/pics/',
 };
 
 export const postsSlice = createSlice({
