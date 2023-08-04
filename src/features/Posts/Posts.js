@@ -19,8 +19,12 @@ export function Posts() {
       <br />
       <div>{item.data.selftext}</div>
       <div>
-        <img src={item.data.thumbnail} alt="To be Fixed"/>
+        <img src={item.data.url} alt="" className='image'/>
       </div>
+      <div>           
+        Author: <span>{item.data.author}</span>
+      </div> 
+              
     </div>
   ));
 

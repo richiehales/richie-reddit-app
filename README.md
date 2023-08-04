@@ -2,11 +2,10 @@
 https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ## Current Step (todo)
-1. Fetch Sub Reddit categories and store in subRedditSlice
-2. Map Sub Reddit Categories to buttons
-3. Click a subReddit button - move url (eg. '/r/Home') to selectedSubReddit in postsSlice 
-4. Fetch chosen Sub Reddit posts and store in postsSlice
-5. Map postsSlice (with selected subReddit now in postsSlice) to posts display area
+1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
+2. Remove .self_text - ????
+2. Add comments - ???????????
+3. Look at console error - Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
 
 
 ## Github
@@ -31,5 +30,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-From office Wednesday 16:30
+Home Friday 20:00
 
