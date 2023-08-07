@@ -1,7 +1,6 @@
 const API_ROOT = 'https://www.reddit.com';
 
-export const fetchPosts = async (selectedSubreddit) => {
-  
+export const fetchPosts = async (selectedSubreddit) => {  
     try {
       const response = await fetch(`${API_ROOT}/${selectedSubreddit}.json`);
       if (!response.ok) {
@@ -32,10 +31,19 @@ export const fetchPosts = async (selectedSubreddit) => {
   };
 
 
+  export const fetchCommments = async (selectedComments) => {
+    try {
+      const response = await fetch(`${API_ROOT}/${selectedComments}.json`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+      const data = await response.json();
+      return data[1];
+    } catch (error) {
+        // Handle errors, log, or throw as necessary
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  };
 
-/*
-console.log('From api.js')
-console.log(fetchDataFromPostsAPI())
-console.log(fetchSubreddits())
-*/
-  
+

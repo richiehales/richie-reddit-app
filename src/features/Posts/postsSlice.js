@@ -22,4 +22,4 @@ export const postsSlice = createSlice({
 
 export const { setSelectedSubreddit, setPosts } = postsSlice.actions;
 export default postsSlice.reducer;
-export const selectPosts = (state) => state.posts.posts; //state.posts(initialState posts: []).posts(name: 'posts')
+//export const selectPosts = (state) => state.posts.posts; //state.posts(initialState posts: []).posts(name: 'posts')

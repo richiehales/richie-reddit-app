@@ -5,13 +5,14 @@ import { Posts } from './features/Posts/Posts';
 import { SubReddit } from './features/Subreddit/SubReddit';
 
 
+
 function App() {
   return (
     <div>
       <Header />
       <main className="App-content">
         <SubReddit />
-        <Posts className='posts'/>        
+        <Posts className='posts'/>  
       </main>
     </div>
   );

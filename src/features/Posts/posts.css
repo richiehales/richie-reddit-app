@@ -18,3 +18,12 @@
   text-align: center;
 }
 
+.comments {
+  border: 1px solid red;
+  margin-top: 0.8rem; 
+}
+
+.commentAuthor {
+  margin-top: 1rem;
+}
+
