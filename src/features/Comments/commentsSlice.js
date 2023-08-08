@@ -4,7 +4,8 @@ import {  createSlice } from '@reduxjs/toolkit';
 const initialState = {
   comments: [],
   commentsButtonsDisplay: 'Show Comments',
-  selectedComments: '/r/pics/comments/15kmbif/this_is_my_latest_pencil_drawing_this/'
+  selectedComments: '/r/pics/comments/15kmbif/this_is_my_latest_pencil_drawing_this/',
+  selectedCommentsTitle: ''
 };
 
 export const commentsSlice = createSlice({
@@ -20,10 +21,13 @@ export const commentsSlice = createSlice({
     setComments: (state, action) => {
       state.comments = action.payload; // Replace the state with the new posts data received from the API.
     },
+    setSelectedCommentsTitle: (state, action) => {
+      state.selectedCommentsTitle =action.payload;   
+    }
   }
 })
 
-export const { setSelectedComments, setComments, setButtons } = commentsSlice.actions;
+export const { setSelectedComments, setComments, setButtons, setSelectedCommentsTitle } = commentsSlice.actions;
 export default commentsSlice.reducer;
 
 

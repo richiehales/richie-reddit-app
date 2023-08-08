@@ -6,13 +6,11 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ### Remove .self_text - ???
 
-### Add Comments
-1. Create Comments slice in store with comments: []: & permalink: ""
-2. Set to empty array - nothing displayed until comments button clicked
-3. Update permalink in comments slice with url from permalink in posts when display comments button is clicked
-4. Fetch url (permalink url) from reddit.
-5. map .data.children.body and return return json[1] (second array returned)
-6. For item 5 - return json[1].data.children.map((subreddit) => subreddit.data);
+### To Do
+1. Sort Reddit selection when comments are showing as:
+2. Either hide subReddit selections when comments are 'show comments' or:
+3. Change 'show comments to 'Hide Comments' when a subreddit is clicked.
+
 
 ### Console error
 1. Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
@@ -38,5 +36,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Monday 19:30
+Home Tuesday 16:00
 
