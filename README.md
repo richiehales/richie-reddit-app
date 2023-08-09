@@ -2,15 +2,13 @@
 https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ## Current Step (todo)
-### Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
+1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
 
 ### Remove .self_text - ???
 
-### To Do
-1. Sort Reddit selection when comments are showing as:
-2. Either hide subReddit selections when comments are 'show comments' or:
-3. Change 'show comments to 'Hide Comments' when a subreddit is clicked.
-
+### Future To Do
+1. Search ?????
+2. Check API calls - limitations
 
 ### Console error
 1. Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
@@ -36,5 +34,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Tuesday 16:00
+Office Wednesday 16:00
 

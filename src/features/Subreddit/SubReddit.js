@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyData } from '../../store/getSubReddit';
 import { setSelectedSubreddit } from '../Posts/postsSlice';
+import { setButtons } from '../Comments/commentsSlice';
 import './subReddit.css';
 
 
@@ -9,9 +10,13 @@ import './subReddit.css';
 export function SubReddit() {
   const dispatch = useDispatch();
   const myData = useSelector((state) => state.subReddits.posts.data?.children); // data? - make sure fetched before trying to map
+  const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);
 
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
+    if (commentsButton === 'Hide Comments') {
+      dispatch(setButtons('Show Comments'));
+    } 
   }; 
 
   useEffect(() => {
