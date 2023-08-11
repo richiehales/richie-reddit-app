@@ -1,6 +1,10 @@
 # Redux Tutorial
 https://redux.js.org/tutorials/essentials/part-2-app-structure
 
+## Install
+1. npm install
+2. npm i react-router-dom
+
 ## Current Step (todo)
 1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
 
@@ -35,6 +39,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Work Friday 09:00
-
+Work Friday 13:00
 

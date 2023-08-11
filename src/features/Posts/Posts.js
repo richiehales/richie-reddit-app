@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPostsData } from '../../store/getPosts';
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
@@ -21,15 +22,15 @@ export function Posts() {
     if (commentsButton === 'Show Comments') {
       dispatch(setSelectedComments(comment));
       dispatch(setSelectedCommentsTitle(title));
-      dispatch(setButtons('Hide Comments'));        
-    } else {
-      dispatch(setButtons('Show Comments'));
-      dispatch(setSelectedComments(comment));     
+      dispatch(setButtons('Hide Comments'));
+    } 
+    if (commentsButton === 'Hide Comments') {      
+      dispatch(setSelectedComments(comment));
+      dispatch(setButtons('Show Comments'));     
     }
   };
 
-  const postsDisplayStyle = commentsButton === 'Show Comments' ? {} : { display: 'none' };          // Toggle comments on/off
-  
+   
   const postItems = postsData && postsData.map((item) => (                       // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='postItems' > 
       <div className='title'>
@@ -46,20 +47,16 @@ export function Posts() {
         Author: <span>{item.data.author}</span>
       </div>
       <div>
-        <a href='#commentsDiv'>
-          <button onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>
-            {commentsButton}
-          </button>
-        </a>
+        <button onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>  
+          <Link to="/Comments" >{commentsButton}</Link>
+        </button>   
       </div>
     </div>
   ));
 
   return (
     <div className="posts" >
-      <div>
-        {postItems}
-      </div>
+      {postItems}
     </div>
   )  
 }

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCommentsData } from '../../store/getComments';
 import { setButtons } from './commentsSlice';
+import './comments.css';
 
 export function Comments() {
   const selectedComments = useSelector((state) => state.comments.selectedComments);             // Get the selectedComments from the Redux store
@@ -18,17 +20,16 @@ export function Comments() {
   const handleHideComment = () => {    
     if (commentsButton === 'Show Comments') {
       dispatch(setButtons('Hide Comments'));   
-    } else {
+    } 
+    if (commentsButton === 'Hide Comments') {
       dispatch(setButtons('Show Comments'));   
     }
   };
 
-  const commentsDisplayStyle = commentsButton === 'Hide Comments' ? {} : { display: 'none' };       // Toggle comments on/off 
-
   const commentsItems = commentsData && commentsData.map((item) => (        // mayData && - make sure data is fetched before trying to map
-  <div key={item.data.id} className='comments'>
+  <div key={item.data.id} className='commentDiv' >
     <div className='commentBody'>
-      {item.data.body} <br/>
+      {item.data.body}
     </div>
     <div className='commentAuthor'>
       Author: <span>{item.data.author}</span>
@@ -37,16 +38,16 @@ export function Comments() {
   ));
 
   return(
-    <div id='commentsDiv'>           
-        <button onClick={() => handleHideComment()}>
-          {commentsButton}
-        </button>
-        <div className='commentsTitle'>
-          <h2>{selectedCommentsTitle}</h2>
-        </div>
-        <div>
-          {commentsItems}
-        </div>
+    <div id='commentsDiv' className='comments'>
+      <button onClick={handleHideComment}>  
+        <Link to="/">{commentsButton}</Link>
+      </button>         
+      <div className='commentsTitle'>
+        <h2>{selectedCommentsTitle}</h2>
       </div>
+      <div>
+        {commentsItems}
+      </div>
+    </div>
   )
 }

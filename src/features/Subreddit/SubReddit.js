@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyData } from '../../store/getSubReddit';
 import { setSelectedSubreddit } from '../Posts/postsSlice';
@@ -17,6 +18,9 @@ export function SubReddit() {
     if (commentsButton === 'Hide Comments') {
       dispatch(setButtons('Show Comments'));
     } 
+    if (commentsButton === 'Hide Comments') {
+      dispatch(setButtons('Show Comments'));   
+    } 
   }; 
 
   useEffect(() => {
@@ -26,7 +30,7 @@ export function SubReddit() {
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map
     <div key={item.data.display_name} className='buttons'>
       <button onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
-        {item.data.display_name}
+        <Link to="/">{item.data.display_name}</Link>        
       </button>
     </div>
   ));

@@ -1,0 +1,22 @@
+.comments {
+  border: 1px solid red;
+  width: 50%;  
+}
+
+  .commentDiv {
+    border: 1px solid red;
+  }
+
+
+  .commentBody {
+    margin-top: 1rem; 
+  }
+  
+  .commentAuthor {
+    margin-top: 0.5rem;
+  }
+  
+  .commentsTitle {
+    font-weight: bold;
+    text-align: center;
+  }
