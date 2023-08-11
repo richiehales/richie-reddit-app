@@ -29,9 +29,12 @@ export function SubReddit() {
 
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map
     <div key={item.data.display_name} className='buttons'>
-      <button onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
-        <Link to="/">{item.data.display_name}</Link>        
-      </button>
+        <Link 
+          to="/"
+          className="reddit-link"
+          onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
+            {item.data.display_name}
+        </Link>        
     </div>
   ));
 

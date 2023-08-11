@@ -43,13 +43,18 @@ export function Posts() {
       <div>
         <img src={item.data.url} alt="" className='image'/>
       </div>
-      <div>           
-        Author: <span>{item.data.author}</span>
-      </div>
-      <div>
-        <button onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>  
-          <Link to="/Comments" >{commentsButton}</Link>
-        </button>   
+      <div className='postsFooter'>
+        <div>           
+          Author: <span>{item.data.author}</span>
+        </div>
+        <div>
+          <Link 
+            to="/Comments"
+            className="post-link"  
+            onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>
+              {commentsButton}
+          </Link>
+        </div>  
       </div>
     </div>
   ));

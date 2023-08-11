@@ -8,6 +8,35 @@
   width: 100%
 }
 
+.post-link {
+  border: 1px solid grey !important;
+  color: grey;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 10rem;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-link:hover {
+  background-color: grey;
+  color: white;
+}
+
+.postsFooter {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.postsFooter button {
+  margin-bottom: 0.2rem;
+}
+
 .posts {
   border: 1px solid red;
   width: 50%;

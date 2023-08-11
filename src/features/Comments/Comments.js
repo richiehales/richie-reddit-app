@@ -38,10 +38,13 @@ export function Comments() {
   ));
 
   return(
-    <div id='commentsDiv' className='comments'>
-      <button onClick={handleHideComment}>  
-        <Link to="/">{commentsButton}</Link>
-      </button>         
+    <div id='commentsDiv' className='comments'> 
+      <Link 
+        to="/" 
+        className="comment-link" 
+        onClick={handleHideComment}>
+          {commentsButton}
+      </Link>       
       <div className='commentsTitle'>
         <h2>{selectedCommentsTitle}</h2>
       </div>

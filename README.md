@@ -11,9 +11,8 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 ### Remove .self_text - ???
 
 ### Future To Do
-1. Use Route to switch betwen posts and comments
-2. Search ?????
-3. Check API calls - limitations
+1. Search ?????
+2. Check API calls - limitations
 
 ### Console error
 1. Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
@@ -39,5 +38,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Work Friday 13:00
+Work Friday 15:00
 

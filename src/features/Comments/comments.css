@@ -3,20 +3,38 @@
   width: 50%;  
 }
 
-  .commentDiv {
-    border: 1px solid red;
-  }
+.comment-link {
+  border: 1px solid grey;
+  color: grey;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 10rem;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.comment-link:hover {
+  background-color: grey;
+  color: white;
+}
 
-  .commentBody {
-    margin-top: 1rem; 
-  }
+.commentDiv {
+  border: 1px solid red;
+}
+
+.commentBody {
+  margin-top: 1rem; 
+}
+ 
+.commentAuthor {
+  margin-top: 0.5rem;
+}
   
-  .commentAuthor {
-    margin-top: 0.5rem;
-  }
-  
-  .commentsTitle {
-    font-weight: bold;
-    text-align: center;
-  }
+.commentsTitle {
+  font-weight: bold;
+  text-align: center;
+}
