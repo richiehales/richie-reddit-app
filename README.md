@@ -35,5 +35,6 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Thursday 18:00
+Work Friday 09:00
+
 

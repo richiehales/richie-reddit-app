@@ -1,6 +1,7 @@
 import { setPosts } from '../features/Posts/postsSlice';
 import { fetchPosts } from './api';
 
+
 export const fetchPostsData = (selectedSubreddit) => async (dispatch) => {
   try {
     const postsData = await fetchPosts(selectedSubreddit);
