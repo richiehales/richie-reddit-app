@@ -1,5 +1,5 @@
-import { setSubReddits } from '../features/Subreddit/subRedditSlice';
-import { fetchSubreddits } from './api';
+import { setSubReddits } from './subRedditSlice';
+import { fetchSubreddits } from '../../store/api';
 
 export const fetchMyData = () => async (dispatch) => {
   try {

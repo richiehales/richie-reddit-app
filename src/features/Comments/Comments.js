@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCommentsData } from '../../store/getComments';
+import { fetchCommentsData } from './getComments';
 import { setButtons } from './commentsSlice';
 import './comments.css';
 

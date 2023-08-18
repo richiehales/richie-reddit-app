@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMyData } from '../../store/getSubReddit';
+import { fetchMyData } from './getSubReddit';
 import { setSelectedSubreddit } from '../Posts/postsSlice';
 import { setButtons } from '../Comments/commentsSlice';
 import './subReddit.css';

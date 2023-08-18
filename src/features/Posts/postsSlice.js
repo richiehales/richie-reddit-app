@@ -17,9 +17,12 @@ export const postsSlice = createSlice({
     setPosts: (state, action) => {
       state.posts = action.payload; // Replace the state with the new posts data received from the API.
     },
+    setSearch: (state, action) => {
+      state.searchTerm = action.payload; 
+    },
   }
 })
 
-export const { setSelectedSubreddit, setPosts } = postsSlice.actions;
+export const { setSelectedSubreddit, setPosts, setSearch } = postsSlice.actions;
 export default postsSlice.reducer;
 //export const selectPosts = (state) => state.posts.posts; //state.posts(initialState posts: []).posts(name: 'posts')

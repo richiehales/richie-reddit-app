@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPostsData } from '../../store/getPosts';
+import { fetchPostsData, fetchSearchData } from './getPosts';
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
 import './posts.css';
 
@@ -12,12 +12,9 @@ export function Posts() {
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);                   // data? - make sure fetched before trying to map
-  const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);              // Get the selectedSubreddit from the Redux store
+  const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
+  const searchItem = useSelector((state) => state.posts.searchTerm);
     
-  useEffect(() => {
-    dispatch(fetchPostsData(selectedSubreddit));          // Pass the selectedSubreddit directly to the fetchPostsData function in getPosts.js
-  }, [dispatch, selectedSubreddit]);
-
   const handleSelectComment = (comment, title) => {    
     if (commentsButton === 'Show Comments') {
       dispatch(setSelectedComments(comment));
@@ -30,6 +27,14 @@ export function Posts() {
     }
   };
 
+  useEffect(() => { 
+    dispatch(fetchPostsData(selectedSubreddit));          // Pass the selectedSubreddit directly to the fetchPostsData function in getPosts.js
+  }, [dispatch, selectedSubreddit,]);
+
+  useEffect(() => {
+    console.log(`Test = ${searchItem}`)
+    dispatch(fetchSearchData(searchItem));          
+  }, [dispatch, searchItem]);
    
   const postItems = postsData && postsData.map((item) => (                       // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='postItems' > 
