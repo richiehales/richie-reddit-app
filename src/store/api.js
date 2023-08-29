@@ -1,7 +1,6 @@
 const API_ROOT = 'https://www.reddit.com';
-//    https://www.reddit.com/search/?q=drugs
-//    const SEARCH = 'https://www.reddit.com/search/?q='
-//    http://www.reddit.com/search.json?q=ferrari
+
+//    /r/HumansBeingBros/comments/15mldqo/lovely_human_helps_a_cygnet_choking_on_weed/jvhef75/
 const SEARCH = 'http://www.reddit.com/search.json?q='
 
 export const fetchPosts = async (selectedSubreddit) => {  
@@ -18,6 +17,12 @@ export const fetchPosts = async (selectedSubreddit) => {
     throw error;
   }
 };
+
+/*
+const test = await fetch(`${API_ROOT}/r/HumansBeingBros/comments/15mldqo/lovely_human_helps_a_cygnet_choking_on_weed/jvhef75/.json`)
+const test1 = await test.json()
+console.log(test1)
+*/
 
 export const fetchSearchResults = async (searchItem) => {
   try {

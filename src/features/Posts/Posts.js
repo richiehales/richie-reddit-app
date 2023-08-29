@@ -28,11 +28,12 @@ export function Posts() {
   };
 
   useEffect(() => { 
+    if (searchItem === '') {
     dispatch(fetchPostsData(selectedSubreddit));          // Pass the selectedSubreddit directly to the fetchPostsData function in getPosts.js
-  }, [dispatch, selectedSubreddit,]);
+  }}, [searchItem, dispatch, selectedSubreddit,]);
 
   useEffect(() => {
-    console.log(`Test = ${searchItem}`)
+    console.log('Search useEffect Run')
     dispatch(fetchSearchData(searchItem));          
   }, [dispatch, searchItem]);
    

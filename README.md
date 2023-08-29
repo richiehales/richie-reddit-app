@@ -1,6 +1,3 @@
-# Redux Tutorial
-https://redux.js.org/tutorials/essentials/part-2-app-structure
-
 ## Install
 1. npm install
 2. npm i react-router-dom
@@ -11,7 +8,7 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 ### Remove .self_text - ???
 
 ### Future To Do
-1. Search ?????
+1. Spinning icon when waiting for API calls
 2. Check API calls - limitations
 
 ### Console error
@@ -26,7 +23,7 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 ### Pull -
 1. git pull
 
-### Initial Git Pull/Add (Could clone)
+### Initial Git Pull/Add
 1. git init
 2. git add .
 3. git commit -m "first commit"
@@ -38,5 +35,5 @@ https://redux.js.org/tutorials/essentials/part-2-app-structure
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Holidays Friday 09:30
+Office Tuesda 13:30
 

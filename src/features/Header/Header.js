@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { setSearch } from '../Posts/postsSlice';
+import { setButtons } from '../Comments/commentsSlice';
 import './Header.css';
 import { FaReddit } from 'react-icons/fa';
 
@@ -14,7 +16,8 @@ const Header = () => {
 
   const onSearchClicked = () => {
     dispatch(setSearch(searchTerm))
-    setSearchTerm('')
+    dispatch(setButtons('Show Comments'));
+    setSearchTerm('') 
   }
   
   return (
@@ -29,16 +32,19 @@ const Header = () => {
         <input
           type="text"
           aria-label="Search posts"
-          placeholder='Search'
+          placeholder='Search Reddit'
           value={searchTerm}      
           onChange={onSearchChanged}
         />
-        <button 
-          type="button" 
-          aria-label="Search"
-          onClick={onSearchClicked}>
-          <HiOutlineSearch />
-        </button>
+        <Link 
+        to="/" >  
+          <button 
+            type="button" 
+            aria-label="Search"
+            onClick={onSearchClicked}>
+            <HiOutlineSearch />
+          </button>
+        </Link>
       </form>
     </header>
   );

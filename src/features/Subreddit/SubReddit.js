@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyData } from './getSubReddit';
-import { setSelectedSubreddit } from '../Posts/postsSlice';
+import { setSelectedSubreddit, setSearch } from '../Posts/postsSlice';
 import { setButtons } from '../Comments/commentsSlice';
 import './subReddit.css';
 
@@ -16,10 +16,13 @@ export function SubReddit() {
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
     if (commentsButton === 'Hide Comments') {
+      dispatch(setSearch(''))
       dispatch(setButtons('Show Comments'));
+      
     } 
-    if (commentsButton === 'Hide Comments') {
-      dispatch(setButtons('Show Comments'));   
+    if (commentsButton === 'Show Comments') {
+      dispatch(setSearch(''))
+      dispatch(setButtons('Hide Comments'));   
     } 
   }; 
 
