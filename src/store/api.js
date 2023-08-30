@@ -18,15 +18,8 @@ export const fetchPosts = async (selectedSubreddit) => {
   }
 };
 
-/*
-const test = await fetch(`${API_ROOT}/r/HumansBeingBros/comments/15mldqo/lovely_human_helps_a_cygnet_choking_on_weed/jvhef75/.json`)
-const test1 = await test.json()
-console.log(test1)
-*/
-
 export const fetchSearchResults = async (searchItem) => {
   try {
-    console.log(`${SEARCH}${searchItem}`)
     const response = await fetch(`${SEARCH}${searchItem}`);
     if (!response.ok) {
       throw new Error('Network response was not ok.');

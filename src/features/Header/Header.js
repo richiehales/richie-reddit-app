@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { setSearch } from '../Posts/postsSlice';
+import { fetchSearchData } from '../Posts/getPosts';
 import { setButtons } from '../Comments/commentsSlice';
 import './Header.css';
 import { FaReddit } from 'react-icons/fa';
 
 const Header = () => {
+  console.log('Header Function Rendered')
   const [searchTerm, setSearchTerm] = useState('')
 
   const dispatch = useDispatch();
+  const searchItem = useSelector((state) => state.posts.searchTerm);
+  
 
   const onSearchChanged = e => setSearchTerm(e.target.value)
 
@@ -20,6 +24,11 @@ const Header = () => {
     setSearchTerm('') 
   }
   
+  useEffect(() => {
+    console.log('Search useEffect Run')
+    dispatch(fetchSearchData(searchItem));          
+  }, [dispatch, searchItem])
+    
   return (
     <header>
       <div className="logo">

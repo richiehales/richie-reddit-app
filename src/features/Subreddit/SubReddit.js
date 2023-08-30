@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMyData } from './getSubReddit';
@@ -12,6 +12,7 @@ export function SubReddit() {
   const dispatch = useDispatch();
   const myData = useSelector((state) => state.subReddits.posts.data?.children); // data? - make sure fetched before trying to map
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);
+  const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
 
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
@@ -19,16 +20,13 @@ export function SubReddit() {
       dispatch(setSearch(''))
       dispatch(setButtons('Show Comments'));
       
-    } 
-    if (commentsButton === 'Show Comments') {
-      dispatch(setSearch(''))
-      dispatch(setButtons('Hide Comments'));   
-    } 
+    }
   }; 
-
+  
   useEffect(() => {
     dispatch(fetchMyData());
-  }, [dispatch]);
+  }, [dispatch, selectedSubreddit]);
+  
 
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map
     <div key={item.data.display_name} className='buttons'>
