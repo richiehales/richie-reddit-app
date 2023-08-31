@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPostsData } from './getPosts';
+
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
 import './posts.css';
 
 
 
 export function Posts() {
- 
+  console.log('Posts Function Rendered (Posts.js')
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
-  const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
-  const searchItem = useSelector((state) => state.posts.searchTerm);
     
   const handleSelectComment = (comment, title) => {    
     if (commentsButton === 'Show Comments') {
@@ -26,13 +24,6 @@ export function Posts() {
       dispatch(setButtons('Show Comments'));     
     }
   };
-
-  useEffect(() => { 
-    if (searchItem === '') {
-      console.log('Fetch Posts useEffect Run')
-      dispatch(fetchPostsData(selectedSubreddit));          
-    }
-  }, [searchItem, dispatch, selectedSubreddit]);
    
   const postItems = postsData && postsData.map((item) => (        // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='postItems' > 

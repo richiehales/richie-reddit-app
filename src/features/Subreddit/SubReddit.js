@@ -1,18 +1,19 @@
 import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMyData } from './getSubReddit';
+import { fetchPostsData } from '../Posts/getPosts';
+import { fetchSubredditsData } from './getSubReddit';
 import { setSelectedSubreddit, setSearch } from '../Posts/postsSlice';
 import { setButtons } from '../Comments/commentsSlice';
 import './subReddit.css';
 
 
-
 export function SubReddit() {
   const dispatch = useDispatch();
-  const myData = useSelector((state) => state.subReddits.posts.data?.children); // data? - make sure fetched before trying to map
+  const myData = useSelector((state) => state.subReddits.posts.data?.children);     // data? - make sure fetched before trying to map
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
+  const searchItem = useSelector((state) => state.posts.searchTerm);
 
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
@@ -21,11 +22,19 @@ export function SubReddit() {
       dispatch(setButtons('Show Comments'));
       
     }
-  }; 
-  
+  };  
+
   useEffect(() => {
-    dispatch(fetchMyData());
-  }, [dispatch, selectedSubreddit]);
+    console.log('fetch Subreddit useEffect')
+    dispatch(fetchSubredditsData());            // Fetch list of subreddits to map to buttons
+  }, [dispatch]);
+
+  useEffect(() => { 
+    if (searchItem === '') {
+      console.log('Fetch Posts useEffect Run (SubReddit.js)')
+      dispatch(fetchPostsData(selectedSubreddit));      // Fetch subreddit posts         
+    }
+  }, [searchItem, dispatch, selectedSubreddit]);
   
 
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map

@@ -1,7 +1,7 @@
 import { setSubReddits } from './subRedditSlice';
 import { fetchSubreddits } from '../../store/api';
 
-export const fetchMyData = () => async (dispatch) => {
+export const fetchSubredditsData = () => async (dispatch) => {
   try {
     const data = await fetchSubreddits();
     dispatch(setSubReddits(data));
@@ -10,4 +10,5 @@ export const fetchMyData = () => async (dispatch) => {
     console.error('Error fetching data:', error);
   }
 };
+
 

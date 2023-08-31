@@ -11,11 +11,9 @@ import { FaReddit } from 'react-icons/fa';
 const Header = () => {
   console.log('Header Function Rendered')
   const [searchTerm, setSearchTerm] = useState('')
-
   const dispatch = useDispatch();
   const searchItem = useSelector((state) => state.posts.searchTerm);
   
-
   const onSearchChanged = e => setSearchTerm(e.target.value)
 
   const onSearchClicked = () => {
@@ -25,7 +23,7 @@ const Header = () => {
   }
   
   useEffect(() => {
-    console.log('Search useEffect Run')
+    //console.log('Search useEffect Run')
     dispatch(fetchSearchData(searchItem));          
   }, [dispatch, searchItem])
     
