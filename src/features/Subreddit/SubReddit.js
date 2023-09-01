@@ -13,8 +13,7 @@ export function SubReddit() {
   const myData = useSelector((state) => state.subReddits.posts.data?.children);     // data? - make sure fetched before trying to map
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
-  const searchItem = useSelector((state) => state.posts.searchTerm);
-
+  
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
     if (commentsButton === 'Hide Comments') {
@@ -25,16 +24,12 @@ export function SubReddit() {
   };  
 
   useEffect(() => {
-    console.log('fetch Subreddit useEffect')
     dispatch(fetchSubredditsData());            // Fetch list of subreddits to map to buttons
   }, [dispatch]);
 
-  useEffect(() => { 
-    if (searchItem === '') {
-      console.log('Fetch Posts useEffect Run (SubReddit.js)')
-      dispatch(fetchPostsData(selectedSubreddit));      // Fetch subreddit posts         
-    }
-  }, [searchItem, dispatch, selectedSubreddit]);
+  useEffect(() => {     
+    dispatch(fetchPostsData(selectedSubreddit));     // Fetch subreddit posts         
+  }, [dispatch, selectedSubreddit]);
   
 
   const subRedditButtons = myData && myData.map((item) => (      // mayData && - make sure data is fetched before trying to map

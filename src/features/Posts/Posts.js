@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
 import './posts.css';
 
 
 
 export function Posts() {
-  console.log('Posts Function Rendered (Posts.js')
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
