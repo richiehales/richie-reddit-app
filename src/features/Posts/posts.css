@@ -1,11 +1,18 @@
 .postItems {
   border: 1px solid red;
   width: 100%;
-  justify-content: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.image {
+  text-align: center;
 }
 
 .postItems img {
-  width: 100%
+  width: 60%;
 }
 
 .post-link {
@@ -42,9 +49,6 @@
   width: 50%;
 }
 
-.title {
-  text-align: center;
-}
 
 
 

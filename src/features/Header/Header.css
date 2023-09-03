@@ -1,23 +1,57 @@
 header {
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: 1px solid red;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    margin-left: 1rem;
-    color: red;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 0;
+  margin-left: 1rem;
+  color: red;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
 }
 
-.logo span{
-    margin-left: 0.5rem;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    color:white;
-    background-color: red;;
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo p {
+  font-size: 1.1rem;
+}
+
+.logo span {
+  margin-left: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0.03rem;
+  padding-bottom: 0.03rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color:white;
+  background-color: red;;
+}
+
+.search {
+  font-size: 1rem;
+  vertical-align: middle;
+  border-radius: 0.4rem;
+  background-color: white;
+  border-width: thin;
+}
+
+.button {
+  font-size: 1rem;
+  margin-left: 0.1rem;
+  vertical-align: middle;
+  border-radius: 0.4rem;
+  border-width: thin;
+}
+
+.button:hover {
+  color: red;
 }

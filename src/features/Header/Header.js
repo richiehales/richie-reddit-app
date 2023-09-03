@@ -33,8 +33,9 @@ const Header = () => {
           Reddit<span>Richie Edition</span>
         </p>
       </div>
-      <form className="search">
+      <form>
         <input
+          className="search"
           type="text"
           aria-label="Search posts"
           placeholder='Search Reddit'
@@ -43,7 +44,8 @@ const Header = () => {
         />
         <Link 
         to="/" >  
-          <button 
+          <button
+            className="button" 
             type="button" 
             aria-label="Search"
             onClick={onSearchClicked}>

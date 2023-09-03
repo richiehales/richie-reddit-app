@@ -2,14 +2,14 @@
 1. npm install
 2. npm i react-router-dom
 
-## Current Step (todo)
+## Current Steps (todo)
 1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
-
-### Remove .self_text - ???
+2. Add number of comments to show comments button - count comments
 
 ### Future To Do
 1. Spinning icon when waiting for API calls
 2. Check API calls - limitations
+3. Find URLs in posts text ????? - https://www.slingacademy.com/article/javascript-regular-expressions-extract-validate-urls/?utm_content=cmp-true
 
 ### Console error
 1. Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
@@ -35,5 +35,5 @@
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Friday 12:30
+Home Saturday 11:00
 

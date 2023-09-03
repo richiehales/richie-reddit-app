@@ -10,7 +10,6 @@ export function Comments() {
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);         // Get the commentsButtonsDisplay from the Redux store
   const selectedCommentsTitle = useSelector((state) => state.comments.selectedCommentsTitle);   // Get the selectedCommentsTitle from the Redux store
   const commentsData = useSelector((state) => state.comments.comments.data?.children);          // data? - make sure fetched before trying to map
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,15 +25,15 @@ export function Comments() {
     }
   };
 
-  const commentsItems = commentsData && commentsData.map((item) => (        // mayData && - make sure data is fetched before trying to map
-  <div key={item.data.id} className='commentDiv' >
-    <div className='commentBody'>
-      {item.data.body}
+  const commentsItems = commentsData && commentsData.map((item) => (       // mayData && - make sure data is fetched before trying to map
+    <div key={item.data.id} className='commentDiv'>
+      <div className='commentBody'>
+        {item.data.body}
+      </div>
+      <div className='commentAuthor'>
+        Author: <span>{item.data.author}</span>
+      </div>
     </div>
-    <div className='commentAuthor'>
-      Author: <span>{item.data.author}</span>
-    </div>
-  </div>   
   ));
 
   return(

@@ -32,8 +32,8 @@ export function Posts() {
       <div>
         {item.data.selftext}
       </div>
-      <div>
-        <img src={item.data.url} alt="" className='image'/>
+      <div className='image'>
+        <img src={item.data.url} alt="" />
       </div>
       <div className='postsFooter'>
         <div>           
