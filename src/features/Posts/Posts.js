@@ -36,7 +36,7 @@ export function Posts() {
         <img src={item.data.url} alt="" />
       </div>
       <div className='postsFooter'>
-        <div>           
+        <div className='postAuthor'>           
           Author: <span>{item.data.author}</span>
         </div>
         <div>

@@ -1,15 +1,21 @@
 .comments {
   border: 1px solid red;
-  width: 50%;  
+  width: 50%;
+}
+
+.commentsHeader {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .comment-link {
+  background-color: lightgray;
   border: 1px solid grey;
-  color: grey;
-  width: 10rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-top: 10rem;
+  color: black;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 1rem;
   text-align: center;
   text-decoration: none;
@@ -18,22 +24,56 @@
 }
 
 .comment-link:hover {
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: gray;
+}
+
+.commentsLength {
+  background-color: lightgray;
+  border: 1px solid grey;
+  color: black;
+  margin-right: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
 }
 
 .commentDiv {
   border: 1px solid red;
+  margin-bottom: 0.3rem;
 }
 
 .commentBody {
   margin-top: 1rem; 
 }
- 
-.commentAuthor {
+
+.commentInfo {
   margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
 }
-  
+
+.commentBody {
+  margin-left: 0.5rem;
+}
+.commentAuthor {
+  color: black;
+  font-style: italic;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.commentNumber {
+  color: black;
+  font-style: italic;
+  margin-right: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+ 
 .commentsTitle {
   font-weight: bold;
   text-align: center;

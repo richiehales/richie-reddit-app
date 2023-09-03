@@ -12,7 +12,8 @@
 
 .reddit-link {
   border: 1px solid grey;
-  color: grey;
+  color: black;
+  background-color: lightgray;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-top: 10rem;
@@ -24,7 +25,7 @@
 }
 
 .reddit-link:hover {
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: gray;
 }
 

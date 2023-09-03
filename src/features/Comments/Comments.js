@@ -25,25 +25,35 @@ export function Comments() {
     }
   };
 
-  const commentsItems = commentsData && commentsData.map((item) => (       // mayData && - make sure data is fetched before trying to map
+  const commentsItems = commentsData && commentsData.map((item, index) => (       // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='commentDiv'>
       <div className='commentBody'>
         {item.data.body}
       </div>
-      <div className='commentAuthor'>
-        Author: <span>{item.data.author}</span>
+      <div className='commentInfo'>
+        <div className='commentAuthor'>
+          Author: <span>{item.data.author}</span>
+        </div>
+        <div className='commentNumber'>
+          Comment {index + 1}
+        </div>
       </div>
-    </div>
+    </div>    
   ));
 
-  return(
-    <div id='commentsDiv' className='comments'> 
-      <Link 
-        to="/" 
-        className="comment-link" 
-        onClick={handleHideComment}>
-          {commentsButton}
-      </Link>       
+  return (
+    <div id='commentsDiv' className='comments'>
+      <div className='commentsHeader'>
+        <Link 
+          to="/" 
+          className="comment-link" 
+          onClick={handleHideComment}>
+            {commentsButton}
+        </Link>
+        <div className='commentsLength'>
+          {commentsData?.length} comments
+        </div>
+      </div>      
       <div className='commentsTitle'>
         <h2>{selectedCommentsTitle}</h2>
       </div>
@@ -53,3 +63,5 @@ export function Comments() {
     </div>
   )
 }
+
+// <>{commentsData.length}</>

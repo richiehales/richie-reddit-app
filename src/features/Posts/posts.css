@@ -1,3 +1,8 @@
+.posts {
+  border: 1px solid red;
+  width: 50%;
+}
+
 .postItems {
   border: 1px solid red;
   width: 100%;
@@ -16,11 +21,12 @@
 }
 
 .post-link {
-  border: 1px solid grey !important;
-  color: grey;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-top: 10rem;
+  background-color: lightgray;
+  border: 1px solid grey;
+  color: black;
+  margin-right: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-radius: 1rem;
   text-align: center;
   text-decoration: none;
@@ -29,14 +35,21 @@
 }
 
 .post-link:hover {
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: gray;
+}
+
+.postAuthor {
+  font-style: italic;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .postsFooter {
   border: 1px solid red;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -44,10 +57,7 @@
   margin-bottom: 0.2rem;
 }
 
-.posts {
-  border: 1px solid red;
-  width: 50%;
-}
+
 
 
 
