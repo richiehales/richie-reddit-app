@@ -61,7 +61,7 @@ export function Comments() {
           </div>
         </div>      
         <div className='commentsTitle'>
-          {selectedCommentsTitle}
+          <h2>{selectedCommentsTitle}</h2>
         </div>
 
       </div>

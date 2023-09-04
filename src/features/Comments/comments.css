@@ -4,13 +4,9 @@
 }
 
 .commentsHeader {
-  position: fixed;
-  background-color: aqua;  
-  width: 50%;
-}
 
-.commentsItems {
-  margin-top: 6rem;
+  background-color: aqua;  
+
 }
 
 .commentsComment {
@@ -87,6 +83,11 @@
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
+}
+
+.commentsItems {
+  overflow-y: auto;
+  height: 50rem;
 }
 
 .commentAuthor {

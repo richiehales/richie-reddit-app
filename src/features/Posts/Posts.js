@@ -10,6 +10,7 @@ export function Posts() {
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
+  const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
     
   const handleSelectComment = (comment, title) => {    
     if (commentsButton === 'Show Comments') {
@@ -52,8 +53,13 @@ export function Posts() {
   ));
 
   return (
-    <div className="posts" >
-      {postItems}
+    <div className='postsHeader'>
+      <div className='postsSubreddit'>
+        <h2>{selectedSubreddit}</h2>
+      </div>
+      <div className="posts">
+        {postItems}
+      </div>
     </div>
   )  
 }

@@ -1,11 +1,24 @@
-.posts {
+.postsHeader {
   border: 1px solid red;
   width: 50%;
 }
 
+.postsSubreddit {
+  text-align: center;
+}
+
+.posts {
+  border: 1px solid red;
+  overflow-y: auto;
+  height: 50rem;
+  width: 100%;
+}
+
 .postItems {
   border: 1px solid red;
-  width: 100%;
+
+  padding-left: 1rem;  
+  padding-right: 1rem;
 }
 
 .title {
