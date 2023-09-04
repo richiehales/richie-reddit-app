@@ -4,9 +4,27 @@
 }
 
 .commentsHeader {
+  border: 1px solid red;
+  position: fixed;
+  margin-bottom: 10rem;
+  background-color: aqua;  
+  width: 50%;
+}
+
+.commentsItemsWrapper {
+  margin-top: 0.1rem;
+  position: static;
+}
+
+.commentsComment {
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
+}
+
+.commentsTitle {
+  font-weight: bold;
+  text-align: center;
 }
 
 .comment-link {
@@ -29,15 +47,9 @@
 }
 
 .commentsLength {
-  background-color: lightgray;
-  border: 1px solid grey;
   color: black;
+  font-style: italic;
   margin-right: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  text-decoration: none;
 }
 
 .commentDiv {
@@ -46,7 +58,8 @@
 }
 
 .commentBody {
-  margin-top: 1rem; 
+  margin-top: 0.5rem;
+
 }
 
 .commentInfo {
@@ -57,6 +70,7 @@
 
 .commentBody {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .commentAuthor {
   color: black;
@@ -74,7 +88,3 @@
   padding-right: 0.5rem;
 }
  
-.commentsTitle {
-  font-weight: bold;
-  text-align: center;
-}

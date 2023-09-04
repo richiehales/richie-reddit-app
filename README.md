@@ -5,6 +5,7 @@
 ## Current Steps (todo)
 1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
 2. Add number of comments to show comments button - count comments
+3. Add link to post - take to Reddit post page
 
 ### Future To Do
 1. Spinning icon when waiting for API calls
@@ -35,5 +36,5 @@
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Sunday 18:00
+Office Monday 15:00
 

@@ -1,10 +1,16 @@
 header {
   border: 1px solid red;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   height: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .logo {
   margin-left: 1rem;

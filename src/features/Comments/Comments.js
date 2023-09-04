@@ -44,24 +44,25 @@ export function Comments() {
   return (
     <div id='commentsDiv' className='comments'>
       <div className='commentsHeader'>
-        <Link 
-          to="/" 
-          className="comment-link" 
-          onClick={handleHideComment}>
-            {commentsButton}
-        </Link>
-        <div className='commentsLength'>
-          {commentsData?.length} comments
+        <div className='commentsComment'>
+          <Link 
+            to="/" 
+            className="comment-link" 
+            onClick={handleHideComment}>
+              {commentsButton}
+          </Link>
+          <div className='commentsLength'>
+            {commentsData?.length} comments
+          </div>
+        </div>      
+        <div className='commentsTitle'>
+          <h2>{selectedCommentsTitle}</h2>
         </div>
-      </div>      
-      <div className='commentsTitle'>
-        <h2>{selectedCommentsTitle}</h2>
       </div>
-      <div>
+      <div className="commentsItemsWrapper">
         {commentsItems}
       </div>
     </div>
   )
 }
 
-// <>{commentsData.length}</>
