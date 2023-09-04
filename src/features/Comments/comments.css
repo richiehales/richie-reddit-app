@@ -4,16 +4,13 @@
 }
 
 .commentsHeader {
-  border: 1px solid red;
   position: fixed;
-  margin-bottom: 10rem;
   background-color: aqua;  
   width: 50%;
 }
 
-.commentsItemsWrapper {
-  margin-top: 0.1rem;
-  position: static;
+.commentsItems {
+  margin-top: 6rem;
 }
 
 .commentsComment {
@@ -23,8 +20,11 @@
 }
 
 .commentsTitle {
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 1.05rem;
   text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .comment-link {
@@ -46,6 +46,26 @@
   color: gray;
 }
 
+.homeButton {
+  background-color: lightgray;
+  border: 1px solid grey;
+  color: black;
+  height: 1.5rem;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.homeButton:hover {
+  background-color: white;
+  color: gray;
+}
+
 .commentsLength {
   color: black;
   font-style: italic;
@@ -59,7 +79,8 @@
 
 .commentBody {
   margin-top: 0.5rem;
-
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .commentInfo {
@@ -68,10 +89,6 @@
   justify-content: space-between;
 }
 
-.commentBody {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
 .commentAuthor {
   color: black;
   font-style: italic;

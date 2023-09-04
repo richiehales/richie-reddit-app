@@ -51,15 +51,21 @@ export function Comments() {
             onClick={handleHideComment}>
               {commentsButton}
           </Link>
+          <div>
+            <button className='homeButton'>
+              Back to top            
+            </button>
+          </div>
           <div className='commentsLength'>
             {commentsData?.length} comments
           </div>
         </div>      
         <div className='commentsTitle'>
-          <h2>{selectedCommentsTitle}</h2>
+          {selectedCommentsTitle}
         </div>
+
       </div>
-      <div className="commentsItemsWrapper">
+      <div className='commentsItems'>
         {commentsItems}
       </div>
     </div>
