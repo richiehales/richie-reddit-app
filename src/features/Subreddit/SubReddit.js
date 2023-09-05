@@ -13,13 +13,12 @@ export function SubReddit() {
   const myData = useSelector((state) => state.subReddits.posts.data?.children);     // data? - make sure fetched before trying to map
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
-  
+    
   const handleSelectSlice = (buttonId) => {
     dispatch(setSelectedSubreddit(buttonId));
+    dispatch(setSearch(''));
     if (commentsButton === 'Hide Comments') {
-      dispatch(setSearch(''))
-      dispatch(setButtons('Show Comments'));
-      
+      dispatch(setButtons('Show Comments'));      
     }
   };  
 

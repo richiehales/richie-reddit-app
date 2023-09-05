@@ -9,6 +9,7 @@ import './posts.css';
 export function Posts() {
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
+  const searchTerm = useSelector((state) => state.posts.searchTerm);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
     
@@ -23,8 +24,12 @@ export function Posts() {
       dispatch(setButtons('Show Comments'));     
     }
   };
+
+    if (searchTerm === '') {
+
+    }
    
-  const postItems = postsData && postsData.map((item) => (        // mayData && - make sure data is fetched before trying to map
+  const postItems = postsData && postsData.map((item, index) => (        // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='postItems' > 
       <div className='title'>
         <h2>{item.data.title}</h2>
@@ -33,12 +38,17 @@ export function Posts() {
       <div>
         {item.data.selftext}
       </div>
+      <hr className='postsDataDivider'/>
       <div className='image'>
-        <img src={item.data.url} alt="" />
+        <img src={item.data.url} alt="no media available" />
       </div>
+      <hr className='postsDataDivider'/>
       <div className='postsFooter'>
         <div className='postAuthor'>           
           Author: <span>{item.data.author}</span>
+        </div>
+        <div className='postsNumber'>
+          Post {index + 1}
         </div>
         <div>
           <Link 
@@ -49,14 +59,32 @@ export function Posts() {
           </Link>
         </div>  
       </div>
+      <hr className='postsDivider'/>
     </div>
   ));
 
   return (
     <div className='postsHeader'>
-      <div className='postsSubreddit'>
-        <h2>{selectedSubreddit}</h2>
+        <div className='postsData'>
+          <div>
+            <button className='homeButton'>
+              Back to top            
+            </button>
+          </div>
+          <div className='postsLength'>
+            {postsData?.length} posts
+          </div>
+        </div>
+        <hr className='postsDataDivider'/>
+      <div className='postsSubreddit'>        
+        {searchTerm !== '' && (
+          <h1>Searchterm: {searchTerm}</h1>
+        )}
+        {searchTerm === '' && (
+          <h1>Subreddit: {selectedSubreddit}</h1>
+        )}      
       </div>
+      <hr className='postsMainDivider'/>
       <div className="posts">
         {postItems}
       </div>

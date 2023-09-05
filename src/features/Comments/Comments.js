@@ -30,21 +30,23 @@ export function Comments() {
       <div className='commentBody'>
         {item.data.body}
       </div>
+      <hr className='commentsDataDivider'/>
       <div className='commentInfo'>
         <div className='commentAuthor'>
-          Author: <span>{item.data.author}</span>
+          Author: {item.data.author}
         </div>
         <div className='commentNumber'>
           Comment {index + 1}
         </div>
       </div>
+      <hr className='postsDivider'/>
     </div>    
   ));
 
   return (
     <div id='commentsDiv' className='comments'>
       <div className='commentsHeader'>
-        <div className='commentsComment'>
+        <div className='commentsData'>
           <Link 
             to="/" 
             className="comment-link" 
@@ -59,12 +61,13 @@ export function Comments() {
           <div className='commentsLength'>
             {commentsData?.length} comments
           </div>
-        </div>      
+        </div>
+        <hr className='commentsDataDivider'/>      
         <div className='commentsTitle'>
           <h2>{selectedCommentsTitle}</h2>
         </div>
-
       </div>
+      <hr className='commentsMainDivider'/>
       <div className='commentsItems'>
         {commentsItems}
       </div>

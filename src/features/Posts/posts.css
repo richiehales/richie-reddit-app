@@ -1,5 +1,5 @@
 .postsHeader {
-  border: 1px solid red;
+  background-color: white;
   width: 50%;
 }
 
@@ -8,17 +8,55 @@
 }
 
 .posts {
-  border: 1px solid red;
   overflow-y: auto;
   height: 50rem;
   width: 100%;
 }
 
-.postItems {
-  border: 1px solid red;
+.postsData {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
+.postsLength {
+  font-style: italic;
+  margin-right: 1.5rem;
+}
+
+.postsDataDivider {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.postsMainDivider {
+  width: 100%;
+  height: 1.5rem;
+  background-color: lightgray;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.postsDivider {
+  width: 95%;
+  height: 0.75rem;
+  background-color: lightgray;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.postItems {
   padding-left: 1rem;  
   padding-right: 1rem;
+}
+
+.postsNumber {
+  color: black;
+  font-style: italic;
+  margin-right: 1.5rem;
 }
 
 .title {
@@ -55,12 +93,9 @@
 .postAuthor {
   font-style: italic;
   margin-left: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .postsFooter {
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
