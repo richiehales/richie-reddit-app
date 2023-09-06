@@ -27,7 +27,6 @@ export function Posts() {
   };
 
   const toTop = () => {
-    console.log('toTop Ran')
     postsList.current.scrollTo(0,0)
   }
 

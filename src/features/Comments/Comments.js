@@ -27,7 +27,6 @@ export function Comments() {
   };
 
   const toTop = () => {
-    console.log('toTop Ran')
     commentsList.current.scrollTo(0,0)
   }
 
