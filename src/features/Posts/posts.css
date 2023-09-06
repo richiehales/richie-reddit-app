@@ -9,8 +9,7 @@
 
 .posts {
   overflow-y: scroll;
-  height: 50rem;
-  width: 100%;
+  height: 45rem;
 }
 
 .posts::-webkit-scrollbar {

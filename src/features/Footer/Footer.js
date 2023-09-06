@@ -13,7 +13,9 @@ const Footer = () => {
         <div className='link'>
           <a 
           href='https://richiehales.github.io/portfolio_richie/'
-          className='linkButton'>
+          className='linkButton'
+          target="_blank"
+          rel="noreferrer">
               Richie Hales
           </a>
         </div>

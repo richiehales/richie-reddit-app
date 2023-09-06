@@ -94,6 +94,7 @@
 
 .commentBody {
   margin-top: 1.5rem;
+  font-weight: bold;
   margin-bottom: 3rem;
   text-align: center;
   font-size: large;
@@ -109,7 +110,7 @@
 
 .commentsItems {
   overflow-y: scroll;
-  height: 50rem;
+  height: 45rem;
 }
 
 .commentsItems::-webkit-scrollbar {
