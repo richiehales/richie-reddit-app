@@ -39,7 +39,7 @@ export function Comments() {
           Comment {index + 1}
         </div>
       </div>
-      <hr className='postsDivider'/>
+      <hr className='commentsDivider'/>
     </div>    
   ));
 

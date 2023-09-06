@@ -36,5 +36,5 @@
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Office Tuesday 16:00
+Home Wednesday 09:00
 

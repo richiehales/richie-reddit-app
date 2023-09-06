@@ -8,9 +8,17 @@
 }
 
 .posts {
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 50rem;
   width: 100%;
+}
+
+.posts::-webkit-scrollbar {
+  display: none;
+}
+
+.postItems img {
+  width: 60%;
 }
 
 .postsData {
@@ -40,17 +48,12 @@
 }
 
 .postsDivider {
-  width: 95%;
+  width: 100%;
   height: 0.75rem;
   background-color: lightgray;
   border: none;
   margin-left: auto;
   margin-right: auto;
-}
-
-.postItems {
-  padding-left: 1rem;  
-  padding-right: 1rem;
 }
 
 .postsNumber {
@@ -65,10 +68,6 @@
 
 .image {
   text-align: center;
-}
-
-.postItems img {
-  width: 60%;
 }
 
 .post-link {

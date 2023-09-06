@@ -24,6 +24,15 @@
   margin-right: auto;
 }
 
+.commentsDivider {
+  width: 100%;
+  height: 0.75rem;
+  background-color: lightgray;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .commentsTitle {
   font-weight: bolder;
   font-size: 1.05rem;
@@ -96,8 +105,12 @@
 }
 
 .commentsItems {
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 50rem;
+}
+
+.commentsItems::-webkit-scrollbar {
+  display: none;
 }
 
 .commentAuthor {
