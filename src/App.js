@@ -5,6 +5,7 @@ import Header  from './features/Header/Header';
 import { Posts } from './features/Posts/Posts';
 import { SubReddit } from './features/Subreddit/SubReddit';
 import { Comments } from './features/Comments/Comments';
+import Footer  from './features/Footer/Footer';
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Comments" element={ <Comments /> } />
       </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef }from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
@@ -12,7 +12,8 @@ export function Posts() {
   const searchTerm = useSelector((state) => state.posts.searchTerm);
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
-    
+  const postsList = useRef();
+   
   const handleSelectComment = (comment, title) => {    
     if (commentsButton === 'Show Comments') {
       dispatch(setSelectedComments(comment));
@@ -25,17 +26,22 @@ export function Posts() {
     }
   };
 
-    if (searchTerm === '') {
+  const toTop = () => {
+    console.log('toTop Ran')
+    postsList.current.scrollTo(0,0)
+  }
 
-    }
-   
+ 
   const postItems = postsData && postsData.map((item, index) => (        // mayData && - make sure data is fetched before trying to map
-    <div key={item.data.id} className='postItems' > 
+    <div key={item.data.id} className='postItems' >
+      <div className='postsNumber'>
+        Post {index + 1}
+      </div>
       <div className='title'>
         <h2>{item.data.title}</h2>
       </div>
       <br />
-      <div>
+      <div className='postsText'>
         {item.data.selftext}
       </div>
       <hr className='postsDataDivider'/>
@@ -47,28 +53,28 @@ export function Posts() {
         <div className='postAuthor'>           
           Author: <span>{item.data.author}</span>
         </div>
-        <div className='postsNumber'>
-          Post {index + 1}
-        </div>
+
         <div>
           <Link 
             to="/Comments"
             className="post-link"  
             onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>
-              {commentsButton}
+              Comments
           </Link>
         </div>  
       </div>
       <hr className='postsDivider'/>
     </div>
   ));
-
+  
   return (
     <div className='postsHeader'>
         <div className='postsData'>
           <div>
-            <button className='homeButton'>
-              Back to top            
+            <button 
+              className='homeButton'
+              onClick={() => toTop()}>
+              Posts Home            
             </button>
           </div>
           <div className='postsLength'>
@@ -85,7 +91,7 @@ export function Posts() {
         )}      
       </div>
       <hr className='postsMainDivider'/>
-      <div className="posts">
+      <div className="posts" ref={postsList}>
         {postItems}
       </div>
     </div>

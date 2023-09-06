@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCommentsData } from './getComments';
@@ -11,6 +11,7 @@ export function Comments() {
   const selectedCommentsTitle = useSelector((state) => state.comments.selectedCommentsTitle);   // Get the selectedCommentsTitle from the Redux store
   const commentsData = useSelector((state) => state.comments.comments.data?.children);          // data? - make sure fetched before trying to map
   const dispatch = useDispatch();
+  const commentsList = useRef();
 
   useEffect(() => {
     dispatch(fetchCommentsData(selectedComments));         // Pass the selectedComments directly to the fetchCommentsData function in getComments.js
@@ -25,8 +26,16 @@ export function Comments() {
     }
   };
 
+  const toTop = () => {
+    console.log('toTop Ran')
+    commentsList.current.scrollTo(0,0)
+  }
+
   const commentsItems = commentsData && commentsData.map((item, index) => (       // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='commentDiv'>
+      <div className='commentNumber'>
+        Comment {index + 1}
+      </div>
       <div className='commentBody'>
         {item.data.body}
       </div>
@@ -34,9 +43,6 @@ export function Comments() {
       <div className='commentInfo'>
         <div className='commentAuthor'>
           Author: {item.data.author}
-        </div>
-        <div className='commentNumber'>
-          Comment {index + 1}
         </div>
       </div>
       <hr className='commentsDivider'/>
@@ -51,11 +57,13 @@ export function Comments() {
             to="/" 
             className="comment-link" 
             onClick={handleHideComment}>
-              {commentsButton}
+              Posts
           </Link>
           <div>
-            <button className='homeButton'>
-              Back to top            
+            <button 
+            className='homeButton'
+            onClick={() => toTop()}>
+              Comments Home           
             </button>
           </div>
           <div className='commentsLength'>
@@ -68,7 +76,7 @@ export function Comments() {
         </div>
       </div>
       <hr className='commentsMainDivider'/>
-      <div className='commentsItems'>
+      <div className='commentsItems' ref={commentsList}>
         {commentsItems}
       </div>
     </div>

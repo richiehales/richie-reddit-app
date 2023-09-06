@@ -21,6 +21,11 @@
   width: 60%;
 }
 
+.postsText {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .postsData {
   margin-top: 0.5rem;
   display: flex;
@@ -57,7 +62,8 @@
 }
 
 .postsNumber {
-  color: black;
+  text-align: center;
+  font-size: large;
   font-style: italic;
 }
 
@@ -67,6 +73,12 @@
 
 .image {
   text-align: center;
+}
+
+.postAuthor {
+  font-style: italic;
+  font-size: small;
+  margin-left: 1.5rem;
 }
 
 .post-link {
@@ -86,11 +98,6 @@
 .post-link:hover {
   background-color: white;
   color: gray;
-}
-
-.postAuthor {
-  font-style: italic;
-  margin-left: 1.5rem;
 }
 
 .postsFooter {
