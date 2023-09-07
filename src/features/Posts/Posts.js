@@ -13,7 +13,7 @@ export function Posts() {
   const commentsButton = useSelector((state) => state.comments.commentsButtonsDisplay);     // data? - make sure fetched before trying to map
   const selectedSubreddit = useSelector((state) => state.posts.selectedSubreddit);
   const postsList = useRef();
-   
+     
   const handleSelectComment = (comment, title) => {    
     if (commentsButton === 'Show Comments') {
       dispatch(setSelectedComments(comment));
@@ -30,6 +30,10 @@ export function Posts() {
     postsList.current.scrollTo(0,0)
   }
 
+  const toHome = () => {
+    window.scrollTo(0,0)
+    postsList.current.scrollTo(0,0)
+  }
  
   const postItems = postsData && postsData.map((item, index) => (        // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='postItems' >
@@ -52,7 +56,11 @@ export function Posts() {
         <div className='postAuthor'>           
           Author: <span>{item.data.author}</span>
         </div>
-
+        <button 
+          className='topButton'
+          onClick={() => toHome()}>
+            Back To Top            
+        </button>      
         <div>
           <Link 
             to="/Comments"
@@ -71,7 +79,7 @@ export function Posts() {
         <div className='postsData'>
           <div>
             <button 
-              className='homeButton'
+              className='postsHomeButton'
               onClick={() => toTop()}>
               Posts Home            
             </button>

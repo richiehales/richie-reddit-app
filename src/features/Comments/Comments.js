@@ -30,6 +30,11 @@ export function Comments() {
     commentsList.current.scrollTo(0,0)
   }
 
+  const toHome = () => {
+    window.scrollTo(0,0)
+    commentsList.current.scrollTo(0,0)
+  }
+
   const commentsItems = commentsData && commentsData.map((item, index) => (       // mayData && - make sure data is fetched before trying to map
     <div key={item.data.id} className='commentDiv'>
       <div className='commentNumber'>
@@ -43,6 +48,11 @@ export function Comments() {
         <div className='commentAuthor'>
           Author: {item.data.author}
         </div>
+        <button 
+          className='topButtonComment'
+          onClick={() => toHome()}>
+            Back To Top            
+        </button>  
       </div>
       <hr className='commentsDivider'/>
     </div>    

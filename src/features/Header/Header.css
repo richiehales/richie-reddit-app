@@ -4,13 +4,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  height: 3rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-
 
 .logo {
   margin-left: 1rem;
@@ -65,4 +63,39 @@ header {
   color: red;
   background-color: white;
   color: gray;
+}
+
+@media (max-width: 1050px) {
+  header {
+    justify-content: right;
+    width: 100%;
+  }
+  .button {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    display: block;
+    text-align: center;
+    height: 100%;
+  }
+  .logo {
+    justify-content: center;
+    position: static;
+    margin-left: 0rem;
+  }
+  form {
+    margin-bottom: 0.5rem;
+  }
+  .button {
+    margin-right: 0rem;
+  }
+}
+
+@media (max-width: 1020px) {
+  html {
+    font-size: 0.75rem ;
+  }
 }

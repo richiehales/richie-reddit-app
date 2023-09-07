@@ -1,6 +1,7 @@
 .comments {
   background-color: white;
   width: 50%;
+  height: 70rem;
 }
 
 .commentsMainDivider {
@@ -51,6 +52,7 @@
   border-radius: 1rem;
   text-align: center;
   text-decoration: none;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -70,6 +72,7 @@
   padding-right: 0.5rem;
   border-radius: 1rem;
   text-align: center;
+  font-size: 1rem;;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -87,7 +90,7 @@
 
 .commentNumber {
   text-align: center;
-  font-size: large;
+  font-size: 1rem;
   font-style: italic;
   margin-right: 1.5rem;
 }
@@ -110,7 +113,7 @@
 
 .commentsItems {
   overflow-y: scroll;
-  height: 45rem;
+  height: 60rem;
 }
 
 .commentsItems::-webkit-scrollbar {
@@ -124,5 +127,36 @@
   margin-left: 1.5rem;
 }
 
+.topButtonComment {
+  background-color: lightgray;
+  border: 1px solid grey;
+  color: black;
+  font-size: 0.8rem;
+  height: 100%;
+  margin-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.topButtonComment:hover {
+  background-color: white;
+  color: gray;
+}
+
+
+@media (max-width: 750px) {
+  .comments {
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+  }
+  .commentBody {
+    font-weight: normal
+  }
+}
  
