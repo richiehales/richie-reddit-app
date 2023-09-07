@@ -1,6 +1,8 @@
 .footer {
   text-align: center;
   border-top: 1px solid black;
+  background-color: #253439;
+  color: white;
 }
 
 .link {
@@ -11,19 +13,18 @@
 }
 
 .linkButton {
-  color: black;
+  color: white;
   }
 
 .linkButton:hover {
   text-decoration: none;
-  color: gray;
 }
 
 .home {
   text-align: center;  
-  background-color: lightgray;
-  border: 1px solid grey;
-  font-size: medium;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
   height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -36,8 +37,7 @@
   }
   
   .home:hover {
-    background-color: white;
-    color: gray;
+    background-color: darkgray;
   }
 
 
