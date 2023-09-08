@@ -22,7 +22,6 @@ const Header = () => {
   }
 
   const handleEnterKeyPress = (e) => {
-    console.log("enter pressed")
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent form submission
       onSearchClicked();
