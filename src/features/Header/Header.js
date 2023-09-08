@@ -16,14 +16,21 @@ const Header = () => {
   const onSearchChanged = e => setSearchTerm(e.target.value)
 
   const onSearchClicked = () => {
-    dispatch(setSearch(searchTerm))
+    dispatch(setSearch(searchTerm));
     dispatch(setButtons('Show Comments'));
-    setSearchTerm('')
+    setSearchTerm('');
   }
+
+  const handleEnterKeyPress = (e) => {
+    console.log("enter pressed")
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission
+      onSearchClicked();
+    }
+  };
   
   useEffect(() => {
-    dispatch(fetchSearchData(searchItem));
-    console.log('Fetch Search Data Called')          
+    dispatch(fetchSearchData(searchItem));      
   }, [dispatch, searchItem])
     
   return (
@@ -42,7 +49,7 @@ const Header = () => {
           placeholder='Search Reddit'
           value={searchTerm}      
           onChange={onSearchChanged}
-        />
+          onKeyDown={handleEnterKeyPress}/>
         <Link 
         to="/" >  
           <button
@@ -50,7 +57,7 @@ const Header = () => {
             type="button" 
             aria-label="Search"
             onClick={onSearchClicked}>
-            <HiOutlineSearch />
+            <HiOutlineSearch/>
           </button>
         </Link>
       </form>
