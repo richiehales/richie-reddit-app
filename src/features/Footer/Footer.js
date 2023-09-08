@@ -12,7 +12,7 @@ const Footer = () => {
       <div>
         <div className='link'>
           <a 
-          href='https://richiehales.github.io/portfolio_richie/'
+          href='https://richiehalesportfolio.netlify.app/'
           className='linkButton'
           target="_blank"
           rel="noreferrer">
