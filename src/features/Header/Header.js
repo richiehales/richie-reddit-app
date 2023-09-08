@@ -22,7 +22,8 @@ const Header = () => {
   }
   
   useEffect(() => {
-    dispatch(fetchSearchData(searchItem));          
+    dispatch(fetchSearchData(searchItem));
+    console.log('Fetch Search Data Called')          
   }, [dispatch, searchItem])
     
   return (
