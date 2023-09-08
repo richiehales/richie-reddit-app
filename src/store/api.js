@@ -1,7 +1,7 @@
 const API_ROOT = 'https://www.reddit.com';
 
 //    /r/HumansBeingBros/comments/15mldqo/lovely_human_helps_a_cygnet_choking_on_weed/jvhef75/
-const SEARCH = 'http://www.reddit.com/search.json?q='
+const SEARCH = 'https://www.reddit.com/search.json?q='
 
 export const fetchPosts = async (selectedSubreddit) => {  
   try {
