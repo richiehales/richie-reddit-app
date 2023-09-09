@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../Comments/commentsSlice';
 import './posts.css';
+import { FaReddit } from 'react-icons/fa';
 
 
 
@@ -54,7 +55,12 @@ export function Posts() {
           {isImageUrl(item.data.url) ? (
             <img src={item.data.url} alt="Item" />
           ) : (
-            <p>{`Post ${index + 1} - no image`}</p>
+            <div className="post-logo">
+            <FaReddit className="post-logo-icon" />
+            <p>
+              Reddit-no image
+            </p>
+          </div>
           )}
       </div>
       <hr className='posts-data-divider'/>

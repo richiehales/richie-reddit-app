@@ -21,6 +21,21 @@
   width: 60%;
 }
 
+.post-logo {
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-logo-icon {
+  font-size: 1.8rem;
+}
+
+.post-logo p {
+  font-size: 1.1rem;
+}
+
 .posts-text {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
