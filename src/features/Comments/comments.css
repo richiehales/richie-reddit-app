@@ -4,7 +4,7 @@
   height: 70rem;
 }
 
-.commentsMainDivider {
+.comments-main-divider {
   width: 100%;
   height: 1.5rem;
   background-color: lightgray;
@@ -13,19 +13,19 @@
   margin-right: auto;
 }
 
-.commentsData {
+.comments-data {
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
 }
 
-.commentsDataDivider {
+.comments-data-divider {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.commentsDivider {
+.comments-divider {
   width: 100%;
   height: 0.75rem;
   background-color: lightgray;
@@ -34,7 +34,7 @@
   margin-right: auto;
 }
 
-.commentsTitle {
+.comments-title {
   font-weight: bolder;
   font-size: 1.05rem;
   text-align: center;
@@ -62,7 +62,7 @@
   color: gray;
 }
 
-.homeButton {
+.home-button {
   background-color: lightgray;
   border: 1px solid grey;
   color: black;
@@ -78,24 +78,24 @@
   transition: background-color 0.3s ease;
 }
 
-.homeButton:hover {
+.home-button:hover {
   background-color: white;
   color: gray;
 }
 
-.commentsLength {
+.comments-length {
   font-style: italic;
   margin-right: 1.5rem;
 }
 
-.commentNumber {
+.comment-number {
   text-align: center;
   font-size: 1rem;
   font-style: italic;
   margin-right: 1.5rem;
 }
 
-.commentBody {
+.comment-body {
   margin-top: 1.5rem;
   font-weight: bold;
   margin-bottom: 3rem;
@@ -105,29 +105,29 @@
   margin-right: 0.5rem;
 }
 
-.commentInfo {
+.comment-info {
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
 }
 
-.commentsItems {
+.comments-items {
   overflow-y: scroll;
   height: 60rem;
 }
 
-.commentsItems::-webkit-scrollbar {
+.comments-items::-webkit-scrollbar {
   display: none;
 }
 
-.commentAuthor {
+.comment-author {
   color: black;
   font-size: small;
   font-style: italic;
   margin-left: 1.5rem;
 }
 
-.topButtonComment {
+.top-button-comment {
   background-color: lightgray;
   border: 1px solid grey;
   color: black;
@@ -143,7 +143,7 @@
   transition: background-color 0.3s ease;
 }
 
-.topButtonComment:hover {
+.top-button-comment:hover {
   background-color: white;
   color: gray;
 }
@@ -155,7 +155,7 @@
     margin-top: 2rem;
     padding-top: 0.5rem;
   }
-  .commentBody {
+  .comment-body {
     font-weight: normal
   }
 }

@@ -26,70 +26,60 @@ export function Posts() {
     }
   };
 
-  const toTop = () => {
-    postsList.current.scrollTo(0,0)
-  }
-
   const toHome = () => {
     window.scrollTo(0,0)
     postsList.current.scrollTo(0,0)
   }
  
   const postItems = postsData && postsData.map((item, index) => (        // mayData && - make sure data is fetched before trying to map
-    <div key={item.data.id} className='postItems' >
-      <div className='postsNumber'>
+    <div key={item.data.id} className='post-items' >
+      <div className='posts-number'>
         Post {index + 1}
       </div>
       <div className='title'>
         <h2>{item.data.title}</h2>
       </div>
       <br />
-      <div className='postsText'>
+      <div className='posts-text'>
         {item.data.selftext}
       </div>
-      <hr className='postsDataDivider'/>
+      <hr className='posts-data-divider'/>
       <div className='image'>
         <img src={item.data.url} alt="no media available" />
       </div>
-      <hr className='postsDataDivider'/>
-      <div className='postsFooter'>
-        <div className='postAuthor'>           
+      <hr className='posts-data-divider'/>
+      <div className='posts-footer'>
+        <div className='post-author'>           
           Author: <span>{item.data.author}</span>
         </div>
         <button 
-          className='topButton'
+          className='top-button'
           onClick={() => toHome()}>
             Back To Top            
         </button>      
         <div>
           <Link 
-            to="/Comments"
-            className="post-link"  
+            to="/Comments"              
             onClick={() => handleSelectComment(item.data.permalink, item.data.title)}>
-              Comments
+              <button className="post-link">
+                Comments
+              </button>           
           </Link>
         </div>  
       </div>
-      <hr className='postsDivider'/>
+      <hr className='posts-divider'/>
     </div>
   ));
   
   return (
-    <div className='postsHeader'>
-        <div className='postsData'>
-          <div>
-            <button 
-              className='postsHomeButton'
-              onClick={() => toTop()}>
-              Posts Home            
-            </button>
-          </div>
-          <div className='postsLength'>
+    <div className='posts-header'>
+        <div className='posts-data'>
+          <div className='posts-length'>
             {postsData?.length} posts
           </div>
         </div>
-        <hr className='postsDataDivider'/>
-      <div className='postsSubreddit'>        
+        <hr className='posts-data-divider'/>
+      <div className='posts-subreddit'>        
         {searchTerm !== '' && (
           <h1>Searchterm: {searchTerm}</h1>
         )}
@@ -97,7 +87,7 @@ export function Posts() {
           <h1>Subreddit: {selectedSubreddit}</h1>
         )}      
       </div>
-      <hr className='postsMainDivider'/>
+      <hr className='posts-main-divider'/>
       <div className="posts" ref={postsList}>
         {postItems}
       </div>

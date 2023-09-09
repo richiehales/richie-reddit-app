@@ -26,66 +26,56 @@ export function Comments() {
     }
   };
 
-  const toTop = () => {
-    commentsList.current.scrollTo(0,0)
-  }
-
   const toHome = () => {
     window.scrollTo(0,0)
     commentsList.current.scrollTo(0,0)
   }
 
   const commentsItems = commentsData && commentsData.map((item, index) => (       // mayData && - make sure data is fetched before trying to map
-    <div key={item.data.id} className='commentDiv'>
-      <div className='commentNumber'>
+    <div key={item.data.id} className='comment=div'>
+      <div className='comment-number'>
         Comment {index + 1}
       </div>
-      <div className='commentBody'>
+      <div className='comment-body'>
         {item.data.body}
       </div>
-      <hr className='commentsDataDivider'/>
-      <div className='commentInfo'>
-        <div className='commentAuthor'>
+      <hr className='comments-data-divider'/>
+      <div className='comment-info'>
+        <div className='comment-author'>
           Author: {item.data.author}
         </div>
         <button 
-          className='topButtonComment'
+          className='top-button-comment'
           onClick={() => toHome()}>
             Back To Top            
         </button>  
       </div>
-      <hr className='commentsDivider'/>
+      <hr className='comments-divider'/>
     </div>    
   ));
 
   return (
     <div id='commentsDiv' className='comments'>
-      <div className='commentsHeader'>
-        <div className='commentsData'>
+      <div className='comments-header'>
+        <div className='comments-data'>
           <Link 
-            to="/" 
-            className="comment-link" 
+            to="/"            
             onClick={handleHideComment}>
-              Posts
+              <button className="comment-link">
+                Posts
+              </button>
           </Link>
-          <div>
-            <button 
-            className='homeButton'
-            onClick={() => toTop()}>
-              Comments Home           
-            </button>
-          </div>
-          <div className='commentsLength'>
+          <div className='comments-length'>
             {commentsData?.length} comments
           </div>
         </div>
-        <hr className='commentsDataDivider'/>      
-        <div className='commentsTitle'>
+        <hr className='comments-datadivider'/>      
+        <div className='comments-title'>
           <h2>{selectedCommentsTitle}</h2>
         </div>
       </div>
-      <hr className='commentsMainDivider'/>
-      <div className='commentsItems' ref={commentsList}>
+      <hr className='comments-main-divider'/>
+      <div className='comments-items' ref={commentsList}>
         {commentsItems}
       </div>
     </div>

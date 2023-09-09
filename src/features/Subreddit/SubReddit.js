@@ -35,9 +35,10 @@ export function SubReddit() {
     <div key={item.data.display_name} className='buttons'>
         <Link 
           to="/"
-          className="reddit-link"
           onClick={() => handleSelectSlice(item.data.display_name_prefixed)}>
+            <button className="reddit-link">
             {item.data.display_name}
+            </button>
         </Link>        
     </div>
   ));
