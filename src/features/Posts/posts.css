@@ -34,7 +34,6 @@
 
 .posts-length {
   font-style: italic;
-  margin-right: 1.5rem;
 }
 
 .posts-data-divider {
@@ -65,6 +64,7 @@
   margin-top: 0.5rem;
   display: flex;
   justify-content: center;
+  font-style: italic;
 }
 
 .title {

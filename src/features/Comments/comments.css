@@ -109,6 +109,7 @@
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .comments-items {
@@ -133,7 +134,6 @@
   color: black;
   font-size: 1rem;
   height: 100%;
-  margin-right: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-radius: 1rem;
@@ -157,6 +157,21 @@
   }
   .comment-body {
     font-weight: normal
+  }
+}
+
+@media (max-width: 500px) {
+  .comment-info {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .comment-info button {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0.5rem;
+  }
+  .comment-author {
+    margin-left: 0;
   }
 }
  

@@ -42,7 +42,7 @@ export function Comments() {
       <hr className='comments-data-divider'/>
       <div className='comment-info'>
         <div className='comment-author'>
-          Author: {item.data.author}
+          Author: <span>{item.data.author}</span>
         </div>
         <button 
           className='top-button-comment'
