@@ -26,6 +26,12 @@ export function Posts() {
     }
   };
 
+  const isImageUrl = (url) => {
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp']; // Add more extensions if needed
+    const lowerCaseUrl = url.toLowerCase();
+    return imageExtensions.some(ext => lowerCaseUrl.endsWith(ext));
+  };
+
   const toHome = () => {
     window.scrollTo(0,0)
     postsList.current.scrollTo(0,0)
@@ -45,7 +51,11 @@ export function Posts() {
       </div>
       <hr className='posts-data-divider'/>
       <div className='image'>
-        <img src={item.data.url} alt="no media available" />
+          {isImageUrl(item.data.url) ? (
+            <img src={item.data.url} alt="Item" />
+          ) : (
+            <p>{`Post ${index + 1} - no image`}</p>
+          )}
       </div>
       <hr className='posts-data-divider'/>
       <div className='posts-footer'>
