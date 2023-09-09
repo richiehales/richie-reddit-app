@@ -1,6 +1,6 @@
 .comments {
   background-color: white;
-  width: 50%;
+  width: 60%;
   height: 70rem;
 }
 
@@ -135,6 +135,7 @@
   color: black;
   font-size: 1rem;
   height: 100%;
+  margin-right: 1.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-radius: 1rem;
@@ -167,7 +168,6 @@
     justify-content: center;
   }
   .comment-info button {
-    margin-left: 0;
     margin-right: 0;
     margin-top: 0.5rem;
   }
@@ -175,7 +175,7 @@
     margin-left: 0;
   }
   .comments-data-divider {
-    width: 85%;
+    width: 90%;
   }
 }
  

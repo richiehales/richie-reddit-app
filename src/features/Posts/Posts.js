@@ -58,7 +58,7 @@ export function Posts() {
             <div className="post-logo">
             <FaReddit className="post-logo-icon" />
             <p>
-              Reddit-no image
+              Reddit - no image
             </p>
           </div>
           )}
