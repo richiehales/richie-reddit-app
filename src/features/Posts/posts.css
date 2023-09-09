@@ -37,8 +37,9 @@
 }
 
 .posts-text {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  overflow-wrap: break-word;
 }
 
 .posts-data {
@@ -167,6 +168,12 @@
     margin-left: 0;
     margin-right: 0;
     margin-top: 0.5rem;
+  }
+  .post-author {
+    margin-left: 0;
+  }
+  .posts-data-divider {
+    width: 85%;
   }
 }
 
