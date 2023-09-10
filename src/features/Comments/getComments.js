@@ -1,5 +1,5 @@
 import { setComments } from './commentsSlice';
-import { fetchCommments } from '../../store/api';
+import { fetchCommments } from '../../api/api';
 
 export const fetchCommentsData = (selectedComments) => async (dispatch) => {
   try {

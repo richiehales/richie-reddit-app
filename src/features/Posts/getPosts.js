@@ -1,5 +1,5 @@
 import { setPosts } from './postsSlice';
-import { fetchPosts, fetchSearchResults } from '../../store/api';
+import { fetchPosts, fetchSearchResults } from '../../api/api';
 
 export const fetchPostsData = (selectedSubreddit) => async (dispatch) => {
   try {
