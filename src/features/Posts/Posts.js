@@ -53,7 +53,7 @@ export function Posts() {
       <hr className='posts-data-divider'/>
       <div className='image'>
           {isImageUrl(item.data.url) ? (
-            <img src={item.data.url} alt="Item" />
+            <img src={item.data.url} alt="Item" style={{ maxWidth: '100%' }}/>
           ) : (
             <div className="post-logo">
             <FaReddit className="post-logo-icon" />
