@@ -4,11 +4,11 @@
 
 
 ## Current Steps (todo)
-1. Write tests  - https://www.youtube.com/watch?v=AMo3d_K6e2A
+1. Add spinning icon when loading
+2. Write tests  - https://www.youtube.com/watch?v=AMo3d_K6e2A
                 - https://redux.js.org/usage/writing-tests
-
-
-2. Update ReadMe
+ 
+3. Update ReadMe
 
 
 ### Future To Do
