@@ -3,17 +3,13 @@
 2. npm i react-router-dom
 
 ## Current Steps (todo)
-1. Add 'time ago' - {moment.unix(post.created_utc).fromNow()}
-2. Add number of comments to show comments button - count comments
-3. Add link to post - take to Reddit post page
+1. Write tests - https://www.codecademy.com/career-journey/full-stack-engineer/path/fscj-22-front-end-development/track/fscj-22-react-part-ii
+2. Update ReadMe
 
 ### Future To Do
-1. Spinning icon when waiting for API calls
-2. Check API calls - limitations
-3. Find URLs in posts text ????? - https://www.slingacademy.com/article/javascript-regular-expressions-extract-validate-urls/?utm_content=cmp-true
+1. Display comments under relevent post
+2. Display replies underneath comments
 
-### Console error
-1. Cross-Origin Read Blocking (CORB) blocked cross-origin response <URL> with MIME type text/html. See <URL> for more details.
 
 ## Github
 ### Push - 
@@ -36,5 +32,5 @@
 1. git clone https://github.com/richiehales/richie-reddit-app.git
 
 ## Last Push
-Home Saturday 09:00
+Office Wednesday 11:00
 
