@@ -2,9 +2,12 @@
 1. npm install
 2. npm i react-router-dom
 
+
 ## Current Steps (todo)
-1. Write tests - https://www.codecademy.com/career-journey/full-stack-engineer/path/fscj-22-front-end-development/track/fscj-22-react-part-ii
+1. Write tests - https://www.youtube.com/watch?v=EgJZv9Iyj-E&list=PL-Db3tEF6pB8Am-IhCRgyGSxTalkDpUV_ - #1 15:00mins - Install test dependencies
+
 2. Update ReadMe
+
 
 ### Future To Do
 1. Display comments under relevent post
@@ -30,6 +33,7 @@
 
 ### Git Clone
 1. git clone https://github.com/richiehales/richie-reddit-app.git
+
 
 ## Last Push
 Office Wednesday 11:00
