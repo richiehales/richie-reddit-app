@@ -4,7 +4,9 @@
 
 
 ## Current Steps (todo)
-1. Write tests - https://www.youtube.com/watch?v=EgJZv9Iyj-E&list=PL-Db3tEF6pB8Am-IhCRgyGSxTalkDpUV_ - #1 15:00mins - Install test dependencies
+1. Write tests  - https://www.youtube.com/watch?v=AMo3d_K6e2A
+                - https://redux.js.org/usage/writing-tests
+
 
 2. Update ReadMe
 
@@ -36,5 +38,5 @@
 
 
 ## Last Push
-Office Wednesday 11:00
+Office Wednesday 15:00
 
