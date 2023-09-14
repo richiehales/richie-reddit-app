@@ -10,7 +10,7 @@
 
 
 ## Current step
-1. Write Tests
+1. Write Tests - https://redux.js.org/usage/writing-tests#:~:text=Redux%20can%20be%20tested%20with,by%20the%20Redux%20library%20repos.
 
 
 
