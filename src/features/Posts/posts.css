@@ -104,11 +104,6 @@
   background-color: lightgray;
   border: 1px solid grey;
   color: black;
-  position: absolute;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
   font-size: 1rem;
   height: 100%;
   padding-left: 0.5rem;
