@@ -22,5 +22,5 @@
 ![image info](./images/postspage.jpg)
 
 ## Last Push
-Office Friday 14:00
+Home Friday 17:00 - Tutorial #7 2:30 mins
 
