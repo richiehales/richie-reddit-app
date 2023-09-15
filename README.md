@@ -22,5 +22,5 @@
 ![image info](./images/postspage.jpg)
 
 ## Last Push
-Office Thursday 12:00
+Office Friday 14:00
 

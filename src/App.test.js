@@ -1,15 +1,18 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { store } from './store/store';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders Web Developer', () => {
   const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <MemoryRouter initialEntries={['/']}> {/* Use MemoryRouter */}
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </MemoryRouter>
   );
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
+  expect(getByText(/Web Developer/i)).toBeInTheDocument();
 });
