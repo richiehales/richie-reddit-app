@@ -66,7 +66,7 @@ export function Posts() {
       <hr className='posts-data-divider'/>
       <div className='posts-footer'>
         <div className='post-author'>           
-          Author: <span>{item.data.author}</span>
+          <p>Author: {item.data.author}</p>
         </div>
         <button 
           className='top-button'

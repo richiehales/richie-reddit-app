@@ -13,3 +13,13 @@ test('renders Subreddit in Posts component', () => {
 
   expect(getByText(/Subreddit/i)).toBeInTheDocument();
 });
+
+test('renders Author in Posts component', () => {
+  const { getByText } = render(
+    <Provider store={store}>
+      <Posts />
+    </Provider>
+  );
+
+  expect(getByText(/Subreddit/i)).toBeInTheDocument();
+});
