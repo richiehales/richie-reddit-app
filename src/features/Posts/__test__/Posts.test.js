@@ -1,25 +1,41 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../../../store/store';
+import configureStore from 'redux-mock-store';
+import { MemoryRouter } from 'react-router-dom';
 import { Posts } from '../Posts';
 
-test('renders Subreddit in Posts component', () => {
+const mockStore = configureStore([]);
+
+test('renders Subreddit', () => {
+  const initialState = {
+    posts: {
+      posts: {
+        data: {
+          children: [
+            { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
+            { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
+            // Add more posts as needed
+          ],
+        },
+      },
+      searchTerm: '',
+      selectedSubreddit: 'r/pics',
+    },
+    comments: {
+      commentsButtonsDisplay: 'Show Comments',
+    },
+  };
+  const store = mockStore(initialState);
+
   const { getByText } = render(
     <Provider store={store}>
-      <Posts />
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
     </Provider>
   );
 
   expect(getByText(/Subreddit/i)).toBeInTheDocument();
 });
 
-test('renders Author in Posts component', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <Posts />
-    </Provider>
-  );
-
-  expect(getByText(/Subreddit/i)).toBeInTheDocument();
-});
