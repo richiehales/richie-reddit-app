@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { HiOutlineSearch } from 'react-icons/hi';
@@ -12,6 +12,7 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const dispatch = useDispatch();
   const searchItem = useSelector((state) => state.posts.searchTerm);
+  const linkRef = useRef();
   
   const onSearchChanged = e => setSearchTerm(e.target.value)
 
@@ -25,6 +26,9 @@ const Header = () => {
     if (e.key === 'Enter') {
       e.preventDefault(); // Prevent form submission
       onSearchClicked();
+      if (linkRef.current) {
+        linkRef.current.click(); // Programmatically trigger the Link click event
+      }
     }
   };
   
@@ -49,14 +53,13 @@ const Header = () => {
           value={searchTerm}      
           onChange={onSearchChanged}
           onKeyDown={handleEnterKeyPress}/>
-        <Link 
-        to="/" >  
+        <Link to="/" ref={linkRef}>  
           <button
             className="button" 
             type="button" 
             aria-label="Search"
             onClick={onSearchClicked}>
-            <HiOutlineSearch/>
+              <HiOutlineSearch/>
           </button>
         </Link>
       </form>
