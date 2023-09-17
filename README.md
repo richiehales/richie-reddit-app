@@ -4,6 +4,7 @@
 ## Install
 1. npm install
 2. npm i react-router-dom
+3. npm install redux-mock-store --save-dev
 
 ## Current step
 1. Write Tests 
