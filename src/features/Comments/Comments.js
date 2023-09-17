@@ -69,7 +69,7 @@ export function Comments() {
             {commentsData?.length} comments
           </div>
         </div>
-        <hr className='comments-datadivider'/>      
+        <hr className='comments-data-divider'/>      
         <div className='comments-title'>
           <h2>{selectedCommentsTitle}</h2>
         </div>
