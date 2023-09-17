@@ -8,28 +8,44 @@ import { setButtons } from '../../Comments/commentsSlice';
 
 const mockStore = configureStore([]);
 
+const initialState = {
+  posts: {
+    posts: {
+      data: {
+        children: [
+          { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
+          { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
+        ],
+      },
+    },
+    searchTerm: '',
+    selectedSubreddit: 'r/pics',
+  },
+  comments: {
+    commentsButtonsDisplay: 'Show Comments',
+  },
+};
+
+const initialStateWithSearcTerm = {
+  posts: {
+    posts: {
+      data: {
+        children: [
+          { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
+          { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
+        ],
+      },
+    },
+    searchTerm: 'Mock search term',
+    selectedSubreddit: 'r/pics',
+  },
+  comments: {
+    commentsButtonsDisplay: 'Show Comments',
+  },
+};
 
 
 test('renders Subreddit when searchTerm is empty', () => {
-  const initialState = {
-    posts: {
-      posts: {
-        data: {
-          children: [
-            { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
-            { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
-            // Add more posts as needed
-          ],
-        },
-      },
-      searchTerm: '',
-      selectedSubreddit: 'r/pics',
-    },
-    comments: {
-      commentsButtonsDisplay: 'Show Comments',
-    },
-  };
-
   const store = mockStore(initialState);
 
   const { getByText } = render(
@@ -44,28 +60,8 @@ test('renders Subreddit when searchTerm is empty', () => {
 });
 
 
-
 test('renders Searchterm when searchTerm is not empty', () => {
-  const initialState = {
-    posts: {
-      posts: {
-        data: {
-          children: [
-            { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
-            { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
-            // Add more posts as needed
-          ],
-        },
-      },
-      searchTerm: 'Mock search term', // Set a non-empty searchTerm
-      selectedSubreddit: 'r/pics',
-    },
-    comments: {
-      commentsButtonsDisplay: 'Show Comments',
-    },
-  };
-
-  const store = mockStore(initialState);
+  const store = mockStore(initialStateWithSearcTerm);
 
   const { getByText } = render(
     <Provider store={store}>
@@ -75,34 +71,11 @@ test('renders Searchterm when searchTerm is not empty', () => {
     </Provider>
   );
 
-  // Check if the text "Searchterm: YourSearchTermHere" is present in the component
   expect(getByText('Searchterm: Mock search term')).toBeInTheDocument();
 });
 
 
-
 test('Posts button dispatch', () => {
-  
-  const initialState = {
-    posts: {
-      posts: {
-        data: {
-          children: [
-            { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
-            { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
-            // Add more posts as needed
-          ],
-        },
-      },
-      searchTerm: 'Mock search term', // Set a non-empty searchTerm
-      selectedSubreddit: 'r/pics',
-    },
-    comments: {
-      commentsButtonsDisplay: 'Show Comments',
-    },
-
-  };
-
   const store = mockStore(initialState);
 
   const { getAllByText } = render(
@@ -114,10 +87,10 @@ test('Posts button dispatch', () => {
   );
   
   const button = getAllByText('Comments')
-    fireEvent.click(button[0]);
+  fireEvent.click(button[0]);
 
-    const actions = store.getActions();
-    const expectedAction = setButtons('Hide Comments');
+  const actions = store.getActions();
+  const expectedAction = setButtons('Hide Comments');
 
-    expect(actions).toContainEqual(expectedAction);
+  expect(actions).toContainEqual(expectedAction);
 });

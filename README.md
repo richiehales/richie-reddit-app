@@ -24,5 +24,5 @@
 ![image info](./images/postspage.jpg)
 
 ## Last Push
-Home Friday 17:00 - Tutorial #7 2:30 mins
+Home Sunday 12:00
 
