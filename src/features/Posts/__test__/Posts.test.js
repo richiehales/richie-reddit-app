@@ -75,7 +75,7 @@ test('renders Searchterm when searchTerm is not empty', () => {
 });
 
 
-test('Posts button dispatch', () => {
+test('setButtons action dispatched on button click', () => {
   const store = mockStore(initialState);
 
   const { getAllByText } = render(
