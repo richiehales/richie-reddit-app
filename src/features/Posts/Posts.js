@@ -34,7 +34,6 @@ export function Posts() {
   };
 
   const toHome = () => {
-    window.scrollTo(0,0)
     postsList.current.scrollTo(0,0)
   }
  

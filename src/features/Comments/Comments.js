@@ -27,7 +27,6 @@ export function Comments() {
   };
 
   const toHome = () => {
-    window.scrollTo(0,0)
     commentsList.current.scrollTo(0,0)
   }
 
