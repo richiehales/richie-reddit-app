@@ -44,6 +44,20 @@ const initialStateWithSearcTerm = {
   },
 };
 
+test('renders posts count', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('2 posts')).toBeInTheDocument();
+});
+
 
 test('renders Subreddit when searchTerm is empty', () => {
   const store = mockStore(initialState);
@@ -94,3 +108,5 @@ test('setButtons action dispatched on button click', () => {
 
   expect(actions).toContainEqual(expectedAction);
 });
+
+
