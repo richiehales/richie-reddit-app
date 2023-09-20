@@ -4,7 +4,7 @@ import {  createSlice } from '@reduxjs/toolkit';
 const initialState = {
   comments: [],
   commentsButtonsDisplay: 'Show Comments',
-  selectedComments: '/r/pics/comments/15kmbif/this_is_my_latest_pencil_drawing_this/',
+  selectedComments: '',
   selectedCommentsTitle: ''
 };
 
