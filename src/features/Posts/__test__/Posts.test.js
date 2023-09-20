@@ -167,6 +167,9 @@ test('Comments button in posts component - setButtons action dispatched on butto
   const actions = store.getActions();
   const expectedAction = setButtons('Hide Comments');
 
+  console.log('Posts actions', actions)
+  console.log('Posts expected actions', expectedAction)
+
   expect(actions).toContainEqual(expectedAction);
 });
 
