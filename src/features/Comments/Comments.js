@@ -31,7 +31,7 @@ export function Comments() {
   }
 
   const commentsItems = commentsData && commentsData.map((item, index) => (       // mayData && - make sure data is fetched before trying to map
-    <div key={item.data.id} className='comment=div'>
+    <div key={item.data.id} className='comment-div'>
       <div className='comment-number'>
         Comment {index + 1}
       </div>

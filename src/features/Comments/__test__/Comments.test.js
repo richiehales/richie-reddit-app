@@ -7,7 +7,8 @@ import { Comments } from '../Comments';
 import thunk from 'redux-thunk';
 import { setButtons } from '../commentsSlice';
 
-const mockStore = configureStore([thunk]);
+const middlewares = [thunk];
+const mockStore = configureStore(middlewares);
 
 const initialState = {
   comments: {
@@ -19,44 +20,14 @@ const initialState = {
         ],
       },
     },
-  },
     commentsButtonsDisplay: 'Hide Comments',
     selectedComments: 'Mock Selected Comments',
-    selectedCommentsTitle: '',
+    selectedCommentsTitle: 'Mock Comments Title',
+  },
 };
 
 
-test('renders comment body ', () => {
-  const store = mockStore(initialState);
-
-  const { getByText } = render(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Comments />
-      </MemoryRouter>
-    </Provider>
-  );
-
-  expect(getByText('This is comment 1 text')).toBeInTheDocument();
-});
-
-
-test('renders author', () => {
-  const store = mockStore(initialState);
-
-  const { getByText } = render(
-    <Provider store={store}>
-      <MemoryRouter>
-        <Comments />
-      </MemoryRouter>
-    </Provider>
-  );
-
-  expect(getByText('Author 1')).toBeInTheDocument();
-});
-
-
-test('renders comment count', () => {
+test('Renders comment count in comment component ', () => {
   const store = mockStore(initialState);
 
   const { getByText } = render(
@@ -71,7 +42,67 @@ test('renders comment count', () => {
 });
 
 
-test('setButtons action dispatched on button click', () => {
+test('Renders comment title in components component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Comments />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Mock Comments Title')).toBeInTheDocument();
+});
+
+
+test('Renders comment number in comments component ', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Comments />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Comment 1')).toBeInTheDocument();
+});
+
+
+test('Renders comment body in comments component ', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Comments />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('This is comment 1 text')).toBeInTheDocument();
+});
+
+
+test('Renders author in comments component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Comments />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Author 1')).toBeInTheDocument();
+});
+
+
+test('Posts button in comments component - setButtons action dispatched on button click', () => {
   const store = mockStore(initialState);
 
   const { getByText } = render(
@@ -87,9 +118,6 @@ test('setButtons action dispatched on button click', () => {
 
   const actions = store.getActions();
   const expectedAction = setButtons('Show Comments');
-  console.log('Expected Action:', expectedAction);
-  
-  console.log('Actions:', actions);
 
   expect(actions).toContainEqual(expectedAction);
 });

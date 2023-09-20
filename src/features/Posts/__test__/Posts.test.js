@@ -13,8 +13,8 @@ const initialState = {
     posts: {
       data: {
         children: [
-          { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
-          { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
+          { data: { id: '1', title: 'Post 1 Title', selftext: 'Post 1 Content', url: 'url1', author: 'Author 1' } },
+          { data: { id: '2', title: 'Post 2 Title', selftext: 'Post 2 Content', url: 'url2', author: 'Author 2' } },
         ],
       },
     },
@@ -26,13 +26,13 @@ const initialState = {
   },
 };
 
-const initialStateWithSearcTerm = {
+const initialStateWithSearchTerm = {
   posts: {
     posts: {
       data: {
         children: [
-          { data: { id: '1', title: 'Post 1', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
-          { data: { id: '2', title: 'Post 2', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
+          { data: { id: '1', title: 'Post 1 Title', selftext: 'Content 1', url: 'url1', author: 'Author 1' } },
+          { data: { id: '2', title: 'Post 2 Title', selftext: 'Content 2', url: 'url2', author: 'Author 2' } },
         ],
       },
     },
@@ -44,7 +44,38 @@ const initialStateWithSearcTerm = {
   },
 };
 
-test('renders posts count', () => {
+
+test('Renders posts title in posts component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Post 1 Title')).toBeInTheDocument();
+});
+
+
+test('Renders posts content in posts component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Post 1 Content')).toBeInTheDocument();
+});
+
+
+test('Renders posts count in posts component', () => {
   const store = mockStore(initialState);
 
   const { getByText } = render(
@@ -59,7 +90,37 @@ test('renders posts count', () => {
 });
 
 
-test('renders Subreddit when searchTerm is empty', () => {
+test('Renders post number in posts component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('Post 1')).toBeInTheDocument();
+});
+
+
+test('Renders posts count in posts component', () => {
+  const store = mockStore(initialState);
+
+  const { getByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+
+  expect(getByText('2 posts')).toBeInTheDocument();
+});
+
+
+test('Renders subreddit title in posts component when searchTerm is empty', () => {
   const store = mockStore(initialState);
 
   const { getByText } = render(
@@ -74,8 +135,8 @@ test('renders Subreddit when searchTerm is empty', () => {
 });
 
 
-test('renders Searchterm when searchTerm is not empty', () => {
-  const store = mockStore(initialStateWithSearcTerm);
+test('Renders searchterm in posts component when searchTerm is not empty', () => {
+  const store = mockStore(initialStateWithSearchTerm);
 
   const { getByText } = render(
     <Provider store={store}>
@@ -89,7 +150,7 @@ test('renders Searchterm when searchTerm is not empty', () => {
 });
 
 
-test('setButtons action dispatched on button click', () => {
+test('Comments button in posts component - setButtons action dispatched on button click', () => {
   const store = mockStore(initialState);
 
   const { getAllByText } = render(
