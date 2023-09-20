@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import  { SubReddit } from '../SubReddit';
 import thunk from 'redux-thunk';
 import { setButtons } from '../../Comments/commentsSlice';
-import { setSelectedSubreddit } from '../../Posts/postsSlice';
+import { setSelectedSubreddit, setSearch } from '../../Posts/postsSlice';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -62,6 +62,49 @@ const initialState = {
   
     const actions = store.getActions();
     const expectedAction = setButtons('Show Comments');
+  
+    expect(actions).toContainEqual(expectedAction);
+  });
+
+
+  
+  test('Subreddit button in subreddit component - setSelectedSubreddit action dispatched on button click', () => {
+    const store = mockStore(initialState);
+  
+    const { getByText } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <SubReddit />
+        </MemoryRouter>
+      </Provider>
+    );
+    
+    const button = getByText('Subreddit Button 1')
+    fireEvent.click(button);
+  
+    const actions = store.getActions();
+    const expectedAction = setSelectedSubreddit('Button 1 Prefixed');
+  
+    expect(actions).toContainEqual(expectedAction);
+  });
+
+
+  test('Subreddit button in subreddit component - setSearch action dispatched on button click', () => {
+    const store = mockStore(initialState);
+  
+    const { getByText } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <SubReddit />
+        </MemoryRouter>
+      </Provider>
+    );
+    
+    const button = getByText('Subreddit Button 1')
+    fireEvent.click(button);
+  
+    const actions = store.getActions();
+    const expectedAction = setSearch('');
   
     expect(actions).toContainEqual(expectedAction);
   });

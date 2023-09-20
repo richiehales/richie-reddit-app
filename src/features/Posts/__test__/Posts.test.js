@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
 import { Posts } from '../Posts';
-import { setButtons } from '../../Comments/commentsSlice';
+import { setSelectedComments, setButtons, setSelectedCommentsTitle } from '../../Comments/commentsSlice';
 
 const mockStore = configureStore([]);
 
@@ -13,8 +13,8 @@ const initialState = {
     posts: {
       data: {
         children: [
-          { data: { id: '1', title: 'Post 1 Title', selftext: 'Post 1 Content', url: 'url1', author: 'Author 1' } },
-          { data: { id: '2', title: 'Post 2 Title', selftext: 'Post 2 Content', url: 'url2', author: 'Author 2' } },
+          { data: { id: '1', title: 'Post 1 Title', selftext: 'Post 1 Content', url: 'url1', author: 'Author 1', permalink: 'Post 1 Permalink' } },
+          { data: { id: '2', title: 'Post 2 Title', selftext: 'Post 2 Content', url: 'url2', author: 'Author 2', permalink: 'Post 2 Permalink' } },
         ],
       },
     },
@@ -167,8 +167,47 @@ test('Comments button in posts component - setButtons action dispatched on butto
   const actions = store.getActions();
   const expectedAction = setButtons('Hide Comments');
 
-  console.log('Posts actions', actions)
-  console.log('Posts expected actions', expectedAction)
+  expect(actions).toContainEqual(expectedAction);
+});
+
+
+test('Comments button in posts component - setSelectedComments action dispatched on button click', () => {
+  const store = mockStore(initialState);
+
+  const { getAllByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+  
+  const button = getAllByText('Comments')
+  fireEvent.click(button[0]);
+
+  const actions = store.getActions();
+  const expectedAction = setSelectedComments('Post 1 Permalink');
+
+  expect(actions).toContainEqual(expectedAction);
+});
+
+
+test('Comments button in posts component - setSelectedCommentsTitle action dispatched on button click', () => {
+  const store = mockStore(initialState);
+
+  const { getAllByText } = render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Posts />
+      </MemoryRouter>
+    </Provider>
+  );
+  
+  const button = getAllByText('Comments')
+  fireEvent.click(button[0]);
+
+  const actions = store.getActions();
+  const expectedAction = setSelectedCommentsTitle('Post 1 Title');
 
   expect(actions).toContainEqual(expectedAction);
 });
