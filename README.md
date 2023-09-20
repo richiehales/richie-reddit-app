@@ -18,10 +18,10 @@
 ![image info](./images/postspage.jpg)
 
 ## Testing Overview
-![image info](./images/testing_overview.jpg)
+![image info](./images/testingOverview.jpg)
 
 ## Testing Results
-![image info](./images/testing.jpg)
+![image info](./images/testingResults.jpg)
 
 ## Last Push
 Home Thursday 18:00
