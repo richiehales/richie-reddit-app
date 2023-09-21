@@ -1,5 +1,6 @@
 # Richie Reddit App
 
+## Contents
 [Website Link](#website-link)<br>
 [Wireframe](#wireframe)<br>
 [Technologies](#technologies)<br>
