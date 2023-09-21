@@ -13,12 +13,8 @@
   height: 100%; /* Set the height to 100% to center within the overlay */
 }
 
-.centeredSpinner h4 {
-  /* Styling for the "Fetching data" message */
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 16px;
-  border-radius: 8px;
+.centeredSpinner img {
+  height: 5rem;
 }
 
 .overlay {

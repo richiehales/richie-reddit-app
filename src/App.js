@@ -7,7 +7,7 @@ import { Posts } from './features/Posts/Posts';
 import { SubReddit } from './features/Subreddit/SubReddit';
 import { Comments } from './features/Comments/Comments';
 import Footer  from './features/Footer/Footer';
-
+import spinnerImage from './loading.gif';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       {fetchingData && (
         <div className='overlay'>
           <div className='centeredSpinner'>
-            <h4>Fetching data</h4>
+            <img src={spinnerImage} alt='Fetching data'/>
           </div>
         </div>
       )}
