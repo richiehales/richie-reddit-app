@@ -20,10 +20,12 @@ https://richie-reddit-app.netlify.app
 ![image info](./images/postspage.jpg)
 
 ## Technologies
-1. HTML.
-2. CSS.
-3. React.
-4. Redux.
+1. HTML
+2. CSS
+3. React
+4. Redux
+5. Github
+6. Netlify
 
 ## About
 This project is a simplified version of the Reddit website.<br>
