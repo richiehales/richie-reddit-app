@@ -42,7 +42,7 @@ I built this project as the final portfolio project in the Codecademy full stack
 4. npm install redux-mock-store --save-dev
 
 ## Current Step
-1. Add loader spinner.
+1. Final checks.
       
 ## Lighthouse Report
 ![image info](./images/lighthouse.jpg)
