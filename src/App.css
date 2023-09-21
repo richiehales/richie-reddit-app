@@ -5,6 +5,37 @@
     height: auto;
 }
 
+.centeredSpinner {
+  /* Centering styles for the spinner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Set the height to 100% to center within the overlay */
+}
+
+.centeredSpinner h4 {
+  /* Styling for the "Fetching data" message */
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.overlay {
+  /* Overlay styles to cover the entire screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure it's above other content */
+}
+
+
 @media (max-width: 750px) {
     .homePage {
       display: block ;

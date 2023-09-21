@@ -5,6 +5,7 @@ const initialState = {
   posts: [],
   searchTerm: '',
   selectedSubreddit: 'r/pics/',
+  fetchingData: false
 };
 
 export const postsSlice = createSlice({
@@ -20,9 +21,12 @@ export const postsSlice = createSlice({
     setSearch: (state, action) => {
       state.searchTerm = action.payload; 
     },
+    setFetchingData: (state, action) => {
+      state.fetchingData = action.payload; 
+    },
   }
 })
 
-export const { setSelectedSubreddit, setPosts, setSearch } = postsSlice.actions;
+export const { setSelectedSubreddit, setPosts, setSearch, setFetchingData } = postsSlice.actions;
 export default postsSlice.reducer;
 //export const selectPosts = (state) => state.posts.posts; //state.posts(initialState posts: []).posts(name: 'posts')

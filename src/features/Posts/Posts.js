@@ -6,7 +6,6 @@ import './posts.css';
 import { FaReddit } from 'react-icons/fa';
 
 
-
 export function Posts() {
   const dispatch = useDispatch();
   const postsData = useSelector((state) => state.posts.posts.data?.children);
