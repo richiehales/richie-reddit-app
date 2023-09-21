@@ -1,6 +1,8 @@
 # Richie Reddit App
 
+[Website Link](#website-link)<br>
 [Wireframe](#wireframe)<br>
+[Technologies](#technologies)<br>
 [About](#about)<br>
 [Installation](#installation)<br>
 [Current Step](#current-step)<br>
@@ -10,8 +12,17 @@
 [Future Additions](#future-additions)<br>
 [Last Push](#last-push)<br>
 
+## Website Link
+https://richie-reddit-app.netlify.app
+
 ## Wireframe
 ![image info](./images/postspage.jpg)
+
+## Technologies
+1. HTML.
+2. CSS.
+3. React.
+4. Redux.
 
 ## About
 This project is a simplified version of the Reddit website.<br>
@@ -28,7 +39,7 @@ I built this project as the final portfolio project in the Codecademy full stack
 4. npm install redux-mock-store --save-dev
 
 ## Current Step
-1. Finalise README
+1. Add loader spinner.
       
 ## Lighthouse Report
 ![image info](./images/lighthouse.jpg)
